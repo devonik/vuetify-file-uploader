@@ -7,7 +7,7 @@
     @drop.prevent="drop($event)"
   >
     <h1 v-if="wrongFile">Wrong file type</h1>
-    <h1 v-if="!isDragging && !wrongFile">Drop an image</h1>
+    <h1 v-if="!isDragging && !wrongFile">Drop a file</h1>
   </div>
 </template>
 
@@ -69,7 +69,7 @@ export default {
         if (isFileTypeAllowed) {
           const reader = new FileReader();
           reader.onload = (f) => {
-            this.$emit("loaded", { type: file.type, src: f.target.result });
+            this.$emit("fileLoaded", { type: file.type, src: f.target.result });
             this.isDragging = false;
             this.isLoading = false;
           };

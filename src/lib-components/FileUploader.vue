@@ -1,7 +1,7 @@
 <template>
   <div class="file-uploader">
-    <CardPlaceholder v-if="layoutMode === layoutModes.CARD" />
-    <AvatarUploader v-else-if="layoutMode === layoutModes.AVATAR" />
+    <FileCardList v-if="layout === layouts.CARD" />
+    <AvatarUploader v-else-if="layout === layouts.AVATAR" />
     <input
       type="file"
       class="d-none"
@@ -11,15 +11,15 @@
 </template>
 
 <script>
-import CardPlaceholder from "@/lib-components/CardPlaceholder";
 import helper from "@/assets/helper";
 import AvatarUploader from "@/lib-components/AvatarUploader";
+import FileCardList from "@/lib-components/FileCardList";
 
 export default {
   name: "FileUploader",
-  components: { AvatarUploader, CardPlaceholder },
+  components: { FileCardList, AvatarUploader },
   props: {
-    layoutMode: {
+    layout: {
       type: String,
       default: "card",
     },
@@ -37,8 +37,8 @@ export default {
     return {};
   },
   computed: {
-    layoutModes() {
-      return helper.layoutModes();
+    layouts() {
+      return helper.layouts();
     },
   },
   methods: {

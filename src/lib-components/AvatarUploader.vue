@@ -13,7 +13,7 @@
     <DragDropArea
       v-show="!fileSrc && !isLoading"
       :allowed-file-types="['image/', 'video/mp4']"
-      @loaded="dragDropLoaded"
+      @fileLoaded="dragDropFileLoaded"
       @isLoading="(val) => (isLoading = val)"
     />
   </v-avatar>
@@ -70,7 +70,7 @@ export default {
     },
   },
   methods: {
-    dragDropLoaded({ type, src }) {
+    dragDropFileLoaded({ type, src }) {
       console.log("drop done", type, src);
       this.dragDropSrc = src;
       this.dragDropFileType = type;
