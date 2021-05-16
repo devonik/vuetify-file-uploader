@@ -5,26 +5,57 @@
     @dragover.prevent="dragOver"
     @dragleave.prevent="dragLeave"
     @drop.prevent="drop($event)"
+    @click="$refs.fileInput.browseFile()"
   >
-    <h1 v-if="wrongFile">Wrong file type</h1>
-    <h1 v-if="!isDragging && !wrongFile">Drop a file</h1>
+    allowedFileTypes: {{ allowedFileTypes }}
+    <v-card-title v-if="errors.fileTypeNotAllowed"
+      >Wrong file type</v-card-title
+    >
+    <v-card-title v-else-if="errors.fileSizeExceeded"
+      >File size exceeded</v-card-title
+    >
+    <v-card-title v-else-if="errors.fileSizeExceeded"
+      >No file selected</v-card-title
+    >
+    <v-card-title v-else-if="!isDragging"
+      >Drop a file or click here</v-card-title
+    >
+    <FileInput
+      v-bind="$props"
+      ref="fileInput"
+      @isLoading="(val) => $emit('isLoading', val)"
+      @fileLoaded="(data) => $emit('fileLoaded', data)"
+      @errorType="errors.fileTypeNotAllowed = true"
+      @errorSize="errors.fileSizeExceeded = true"
+      @errorEmpty="errors.fileEmpty = true"
+    />
   </div>
 </template>
 
 <script>
+import FileInput from "@/lib-components/FileInput";
 export default {
   name: "DragDropArea",
+  components: { FileInput },
   props: {
     allowedFileTypes: {
       type: [String, Array],
       default: "image/",
+    },
+    maxSize: {
+      type: [String, Number],
+      default: 2048,
     },
   },
   data() {
     return {
       isDragDropLoading: false,
       isDragging: false,
-      wrongFile: false,
+      errors: {
+        fileTypeNotAllowed: false,
+        fileSizeExceeded: false,
+        fileEmpty: false,
+      },
     };
   },
   computed: {
@@ -36,6 +67,7 @@ export default {
         return this.isDragDropLoading;
       },
       set(val) {
+        this.isDragDropLoading = val;
         this.$emit("isLoading", val);
       },
     },
@@ -48,14 +80,18 @@ export default {
       this.isDragging = false;
     },
     drop(e) {
+      this.resetErrors();
       this.isLoading = true;
       let files = e.dataTransfer.files;
-      this.wrongFile = false;
       let isFileTypeAllowed = false;
       // allows only 1 file
       if (files.length === 1) {
         let file = files[0];
-        // allows image only
+        console.log("want to drag drop file with size", file.size);
+        console.log("maxSize", this.maxSize);
+        const size = file.size / 1024;
+
+        //Check if file type is allowed
         if (typeof this.allowedFileTypes === "string")
           isFileTypeAllowed = file.type.indexOf(this.allowedFileTypes) >= 0;
         else if (this.allowedFileTypes.length > 0) {
@@ -63,10 +99,15 @@ export default {
             (type) => file.type.indexOf(type) >= 0
           );
         }
-
-        console.log("file.type", file.type);
-        console.log("isFileTypeAllowed", isFileTypeAllowed);
-        if (isFileTypeAllowed) {
+        if (!isFileTypeAllowed) {
+          this.errors.fileTypeNotAllowed = true;
+          this.isDragging = false;
+          this.isLoading = false;
+        } else if (this.maxSize && size > this.maxSize) {
+          this.errors.fileSizeExceeded = true;
+          this.isDragging = false;
+          this.isLoading = false;
+        } else {
           const reader = new FileReader();
           reader.onload = (f) => {
             this.$emit("fileLoaded", { type: file.type, src: f.target.result });
@@ -74,21 +115,24 @@ export default {
             this.isLoading = false;
           };
           reader.readAsDataURL(file);
-        } else {
-          //this.$emit("loaded", { type: file.type, src: null });
-          this.wrongFile = true;
-          this.isDragging = false;
-          this.isLoading = false;
         }
       }
     },
     onRequestUploadFiles() {},
+    resetErrors() {
+      this.errors = {
+        fileTypeNotAllowed: false,
+        fileSizeExceeded: false,
+        fileEmpty: false,
+      };
+    },
   },
 };
 </script>
 
 <style scoped>
 .drop {
+  cursor: pointer;
   width: 100%;
   height: 100%;
   background-color: #eee;

@@ -1,12 +1,8 @@
 <template>
   <div class="file-uploader">
-    <FileCardList v-if="layout === layouts.CARD" />
-    <AvatarUploader v-else-if="layout === layouts.AVATAR" />
-    <input
-      type="file"
-      class="d-none"
-      @change="selectFile($event.target.name, $event.target.files)"
-    />
+    maxSize: {{ maxSize }}
+    <FileCardList v-bind="$props" v-if="layout === layouts.CARD" />
+    <AvatarUploader v-bind="$props" v-else-if="layout === layouts.AVATAR" />
   </div>
 </template>
 
@@ -21,15 +17,19 @@ export default {
   props: {
     layout: {
       type: String,
+      required: true,
       default: "card",
+    },
+    allowedFileTypes: {
+      type: [String, Array],
+      default: "image/",
     },
     manageUpload: {
       type: Boolean,
       default: true,
     },
     maxSize: {
-      type: Number,
-      required: false,
+      type: [String, Number],
       default: 2048,
     },
   },
@@ -41,27 +41,7 @@ export default {
       return helper.layouts();
     },
   },
-  methods: {
-    selectFile(field, file) {
-      const [image] = file;
-      if (file.length > 0) {
-        const size = image.size / 1024;
-        if (!image.type.match("image.*")) {
-          this.$emit("error-type");
-        } else if (size > this.maxSize) {
-          this.$emit("error-size");
-        } else {
-          if (!this.manageUpload) this.$emit("upload", image);
-          else this.upload(image);
-        }
-      } else {
-        this.$emit("error-empty");
-      }
-    },
-    upload(image) {
-      console.log("manage upload", image);
-    },
-  },
+  methods: {},
 };
 </script>
 

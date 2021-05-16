@@ -7,6 +7,7 @@
         </v-col>
         <v-col class="d-flex flex-column" v-if="placeholder">
           <FileCardPlaceholder
+            v-bind="$props"
             :content-height="contentHeight"
             @addFile="addFile"
           />
@@ -39,6 +40,18 @@ export default {
     contentHeight: {
       type: [String, Number],
       default: 200,
+    },
+    allowedFileTypes: {
+      type: [String, Array],
+      default: "image/",
+    },
+    manageUpload: {
+      type: Boolean,
+      default: true,
+    },
+    maxSize: {
+      type: [String, Number],
+      default: 2048,
     },
   },
   computed: {

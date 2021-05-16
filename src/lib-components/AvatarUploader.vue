@@ -12,7 +12,7 @@
     <div v-else-if="fileSrc && !isLoading">No preview for this file type</div>
     <DragDropArea
       v-show="!fileSrc && !isLoading"
-      :allowed-file-types="['image/', 'video/mp4']"
+      v-bind="$props"
       @fileLoaded="dragDropFileLoaded"
       @isLoading="(val) => (isLoading = val)"
     />
@@ -48,6 +48,18 @@ export default {
     alt: {
       type: String,
       default: "Picture could not be load",
+    },
+    allowedFileTypes: {
+      type: [String, Array],
+      default: "image/",
+    },
+    manageUpload: {
+      type: Boolean,
+      default: true,
+    },
+    maxSize: {
+      type: [String, Number],
+      default: 2048,
     },
   },
   data() {
