@@ -1,10 +1,10 @@
 <script>
-import Vue from 'vue';
-import VuetifyFileUploaderSample from "../src/lib-components/file-uploader";
-import FileUploader from "../src/lib-components/file-uploader";
+import Vue from "vue";
+import VuetifyFileUploaderSample from "@/lib-components/FileUploader";
+import FileUploader from "@/lib-components/FileUploader";
 export default Vue.extend({
-  name: 'ServeDev',
-  components: {FileUploader, VuetifyFileUploaderSample},
+  name: "ServeDev",
+  components: { FileUploader, VuetifyFileUploaderSample },
 });
 </script>
 
@@ -13,12 +13,8 @@ export default Vue.extend({
     <v-app>
       <v-main>
         <v-container>
-          <v-card>
-            <v-card-title>File uploader</v-card-title>
-            <v-card-text>
-              <FileUploader></FileUploader>
-            </v-card-text>
-          </v-card>
+          <v-card-title>File uploader</v-card-title>
+          <FileUploader layout-mode="avatar"></FileUploader>
         </v-container>
       </v-main>
     </v-app>
