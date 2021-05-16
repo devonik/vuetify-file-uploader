@@ -1,6 +1,5 @@
 <template>
   <div class="file-uploader">
-    maxSize: {{ maxSize }}
     <FileCardList v-bind="$props" v-if="layout === layouts.CARD" />
     <AvatarUploader v-bind="$props" v-else-if="layout === layouts.AVATAR" />
   </div>

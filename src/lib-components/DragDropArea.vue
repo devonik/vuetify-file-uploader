@@ -7,7 +7,6 @@
     @drop.prevent="drop($event)"
     @click="$refs.fileInput.browseFile()"
   >
-    allowedFileTypes: {{ allowedFileTypes }}
     <v-card-title v-if="errors.fileTypeNotAllowed"
       >Wrong file type</v-card-title
     >
