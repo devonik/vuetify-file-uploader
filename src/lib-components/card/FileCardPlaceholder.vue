@@ -12,10 +12,7 @@
       @isLoading="(val) => (isLoading = val)"
     />
 
-    <v-card-actions>
-      <v-spacer></v-spacer>
-      <v-btn>Add file</v-btn>
-    </v-card-actions>
+    <template #footer></template>
   </v-card>
 </template>
 
@@ -25,17 +22,9 @@ export default {
   name: "FileCardPlaceholder",
   components: { DragDropArea },
   props: {
-    contentHeight: {
-      type: [String, Number],
-      default: 200,
-    },
     allowedFileTypes: {
       type: [String, Array],
       default: "image/",
-    },
-    manageUpload: {
-      type: Boolean,
-      default: true,
     },
     maxSize: {
       type: [String, Number],

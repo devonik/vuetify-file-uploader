@@ -12,15 +12,56 @@ TODO npm install ...
    ```
 2. Call it in the template
     ```js
-   <FileUploader layout-mode="avatar"></FileUploader>
+   <FileUploader></FileUploader>
    ```
    
-### configuration
-| Prop        | Type   | Default | Options       | Enum                   |   |
-|-------------|--------|---------|---------------|------------------------|---|
-| layout-mode | String | card    | card / avatar | TODO helper function ? |   |
-|             |        |         |               |                        |   |
-|             |        |         |               |                        |   |
+## configuration
+### Props
+#### FileUploader
+| Prop   | Type   | Default |
+|--------|--------|---------|
+| layout | String | "card"  |
+
+> You can decide for yourself whether to use FileUploader or directly one of the components listed below. All props listed in the lower components can also be passed to FileUploader
+
+#### FileCard
+| Prop            | Type             | Default                     |
+|-----------------|------------------|-----------------------------|
+| file            | Object           | null                        |
+| showPlaceholder | Booolean         | true                        |
+| imageHeight     | String \| Number | 200                         |
+| imageAlt        | String           | "Picture could not be load" |
+| contain         | Boolean          | false                       |
+
+#### FileCardList
+| Prop             | Type             | Default  | Options        | Comment                  |
+|------------------|------------------|----------|----------------|--------------------------|
+| file             | Object           | null     |                |                          |
+| files            | Array            | null     |                |                          |
+| gridCols         | String \| Number | 6        |                |                          |
+| showPlaceholder  | String           | true     |                |                          |
+| imageHeight      | String \| Number | 200      |                |                          |
+| allowedFileTypes | String \| Number | "image/" | See #fileTypes |                          |
+| maxSize          | String \| Number | 2048     |                | Max file size (Kilobyte) |
+| contain          | Boolean          | false    |                | Image contain crop       |
+
+#### AvatarUploader
+| Prop             | Type             | Default                     | Options                             | Comment                                      |
+|------------------|------------------|-----------------------------|-------------------------------------|----------------------------------------------|
+| file             | Object           | null                        | {title: "", type: "", imageSrc: ""} | Set initial file                             |
+| minWidth         | String \| Number | 265                         |                                     | Min width of avatar wrapper and image        |
+| minWidth         | String \| Number | 265                         |                                     | Min height of avatar wrapper and image       |
+| color            | String           | grey                        |                                     | Color in avatar wrapper if no image is given |
+| imageAlt         | String           | "Picture could not be load" |                                     | Text shown if the image could not be load    |
+| allowedFileTypes | String \| Number | "image/"                    | See #fileTypes                      |                                              |
+| maxSize          | String \| Number | 2048                        |                                     | Max file size (Kilobyte)                     |
+| contain          | Boolean          | false                       |                                     | Set image contain                            |
+
+### Events
+
+| Name    | Payload                 | Availability                                         |
+|---------|-------------------------|------------------------------------------------------|
+| addFile | {title, type, imageSrc} | FileUploader, FileCard, FileCardList, AvatarUploader |
 
 ## Dependecies (as peer dependecies)
 - vue

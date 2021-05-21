@@ -109,7 +109,11 @@ export default {
         } else {
           const reader = new FileReader();
           reader.onload = (f) => {
-            this.$emit("fileLoaded", { type: file.type, src: f.target.result });
+            this.$emit("fileLoaded", {
+              title: file.name,
+              type: file.type,
+              imageSrc: f.target.result,
+            });
             this.isDragging = false;
             this.isLoading = false;
           };

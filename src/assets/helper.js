@@ -2,6 +2,7 @@ export default {
   layouts() {
     return {
       CARD: "card",
+      CARD_LIST: "card-list",
       AVATAR: "avatar",
     };
   },
