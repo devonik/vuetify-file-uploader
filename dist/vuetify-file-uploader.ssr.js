@@ -55,7 +55,7 @@ function _arrayLikeToArray(arr, len) {
 
 function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-}var helper = {
+}var utils = {
   layouts: function layouts() {
     return {
       CARD: "card",
@@ -923,7 +923,7 @@ var __vue_component__$2 = /*#__PURE__*/normalizeComponent({
   },
   computed: {
     listLayouts: function listLayouts() {
-      return helper.listLayouts();
+      return utils.listLayouts();
     }
   },
   watch: {
@@ -1010,10 +1010,10 @@ var __vue_staticRenderFns__$1 = [];
 var __vue_inject_styles__$1 = undefined;
 /* scoped */
 
-var __vue_scope_id__$1 = "data-v-2f5fb657";
+var __vue_scope_id__$1 = "data-v-7380535d";
 /* module identifier */
 
-var __vue_module_identifier__$1 = "data-v-2f5fb657";
+var __vue_module_identifier__$1 = "data-v-7380535d";
 /* functional template */
 
 var __vue_is_functional_template__$1 = false;
@@ -1101,7 +1101,7 @@ var __vue_component__$1 = /*#__PURE__*/normalizeComponent({
   },
   computed: {
     layouts: function layouts() {
-      return helper.layouts();
+      return utils.layouts();
     }
   },
   methods: {}
@@ -1163,10 +1163,10 @@ var __vue_staticRenderFns__ = [];
 var __vue_inject_styles__ = undefined;
 /* scoped */
 
-var __vue_scope_id__ = "data-v-1b06bcc8";
+var __vue_scope_id__ = "data-v-c8799f48";
 /* module identifier */
 
-var __vue_module_identifier__ = "data-v-1b06bcc8";
+var __vue_module_identifier__ = "data-v-c8799f48";
 /* functional template */
 
 var __vue_is_functional_template__ = false;

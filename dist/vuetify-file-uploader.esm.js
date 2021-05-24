@@ -1,6 +1,6 @@
 import { VCardTitle, VImg, VAvatar, VProgressCircular, VCard, VCardSubtitle, VCol, VRow } from 'vuetify/lib';
 
-var helper = {
+var utils = {
   layouts() {
     return {
       CARD: "card",
@@ -930,7 +930,7 @@ var script$1 = {
   },
   computed: {
     listLayouts() {
-      return helper.listLayouts();
+      return utils.listLayouts();
     }
 
   },
@@ -1026,7 +1026,7 @@ var __vue_staticRenderFns__$1 = [];
 const __vue_inject_styles__$1 = undefined;
 /* scoped */
 
-const __vue_scope_id__$1 = "data-v-2f5fb657";
+const __vue_scope_id__$1 = "data-v-7380535d";
 /* module identifier */
 
 const __vue_module_identifier__$1 = undefined;
@@ -1119,7 +1119,7 @@ var script = {
 
   computed: {
     layouts() {
-      return helper.layouts();
+      return utils.layouts();
     }
 
   },
@@ -1184,7 +1184,7 @@ var __vue_staticRenderFns__ = [];
 const __vue_inject_styles__ = undefined;
 /* scoped */
 
-const __vue_scope_id__ = "data-v-1b06bcc8";
+const __vue_scope_id__ = "data-v-c8799f48";
 /* module identifier */
 
 const __vue_module_identifier__ = undefined;

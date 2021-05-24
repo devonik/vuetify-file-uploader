@@ -223,7 +223,7 @@
 </template>
 <script>
 import FileUploader from "@/lib-components/FileUploader";
-import helper from "@/utils";
+import utils from "@/utils";
 function defaultSettings() {
   return {
     layout: "card",
@@ -261,7 +261,7 @@ export default {
   },
   computed: {
     commonFileTypes() {
-      return helper.commonFileTypes().sort();
+      return utils.commonFileTypes().sort();
     },
     settingsLayouts() {
       let array = [];
@@ -278,10 +278,10 @@ export default {
       return array;
     },
     layouts() {
-      return helper.layouts();
+      return utils.layouts();
     },
     listLayouts() {
-      return helper.listLayouts();
+      return utils.listLayouts();
     },
   },
   methods: {

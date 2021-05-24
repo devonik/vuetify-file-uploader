@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import helper from "@/utils";
+import utils from "@/utils";
 import AvatarUploader from "@/lib-components/avatar/AvatarUploader";
 import FileCardList from "@/lib-components/card/FileCardList";
 import FileCard from "@/lib-components/card/FileCard";
@@ -101,7 +101,7 @@ export default {
   },
   computed: {
     layouts() {
-      return helper.layouts();
+      return utils.layouts();
     },
   },
   methods: {},
