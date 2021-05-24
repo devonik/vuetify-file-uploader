@@ -10,4 +10,5 @@ COPY ./dist .
 
 EXPOSE 8080
 
-RUN npm run serve
+# start app
+CMD ["npm", "run", "serve"]
