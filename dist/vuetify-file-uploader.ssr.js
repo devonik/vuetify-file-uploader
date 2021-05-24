@@ -840,18 +840,30 @@ var __vue_render__$2 = function __vue_render__() {
         return [_c('v-card-title', [_vm._v("No preview available")])];
       },
       proxy: true
-    }], null, false, 1656814713)
-  }, [_vm._v(" "), _c('v-card-title', {
-    staticClass: "white--text",
-    domProps: {
-      "textContent": _vm._s(_vm.internalFile.title)
-    }
-  }), _vm._v(" "), _c('v-card-subtitle', {
-    staticClass: "white--text",
-    domProps: {
-      "textContent": _vm._s(_vm.internalFile.type)
-    }
-  })], 1) : _vm.showPlaceholder ? _c('FileCardPlaceholder', _vm._b({
+    }, {
+      key: "title",
+      fn: function fn() {
+        return [_c('v-card-title', {
+          staticClass: "white--text",
+          domProps: {
+            "textContent": _vm._s(_vm.internalFile.title)
+          }
+        })];
+      },
+      proxy: true
+    }, {
+      key: "subtitle",
+      fn: function fn() {
+        return [_c('v-card-subtitle', {
+          staticClass: "white--text",
+          domProps: {
+            "textContent": _vm._s(_vm.internalFile.type)
+          }
+        })];
+      },
+      proxy: true
+    }], null, false, 1382629025)
+  }) : _vm.showPlaceholder ? _c('FileCardPlaceholder', _vm._b({
     attrs: {
       "image-height": _vm.imageHeight
     },
@@ -867,10 +879,10 @@ var __vue_staticRenderFns__$2 = [];
 var __vue_inject_styles__$2 = undefined;
 /* scoped */
 
-var __vue_scope_id__$2 = "data-v-17be91da";
+var __vue_scope_id__$2 = "data-v-4208a2e4";
 /* module identifier */
 
-var __vue_module_identifier__$2 = "data-v-17be91da";
+var __vue_module_identifier__$2 = "data-v-4208a2e4";
 /* functional template */
 
 var __vue_is_functional_template__$2 = false;
@@ -939,7 +951,7 @@ var __vue_component__$2 = /*#__PURE__*/normalizeComponent({
     }
   },
   mounted: function mounted() {
-    if (this.files) this.internalFiles = Object.assign(this.files);
+    this.internalFiles = Object.assign(this.files);
   },
   data: function data() {
     return {
@@ -956,7 +968,8 @@ var __vue_component__$2 = /*#__PURE__*/normalizeComponent({
         type: type,
         imageSrc: imageSrc
       });
-      this.files.push({
+      console.log("this.files", this.files);
+      this.internalFiles.push({
         title: title,
         type: type,
         imageSrc: imageSrc
@@ -983,7 +996,7 @@ var __vue_render__$1 = function __vue_render__() {
     staticClass: "file-uploader-card-list"
   }, [_vm.listLayout === _vm.listLayouts.GRID ? [_c('v-row', [_vm._l(_vm.files, function (file) {
     return _c('v-col', {
-      key: file.title,
+      key: file.id ? file.id : file.title,
       attrs: {
         "cols": "12",
         "sm": _vm.gridCols
@@ -1013,10 +1026,10 @@ var __vue_staticRenderFns__$1 = [];
 var __vue_inject_styles__$1 = undefined;
 /* scoped */
 
-var __vue_scope_id__$1 = "data-v-db66a788";
+var __vue_scope_id__$1 = "data-v-af853a80";
 /* module identifier */
 
-var __vue_module_identifier__$1 = "data-v-db66a788";
+var __vue_module_identifier__$1 = "data-v-af853a80";
 /* functional template */
 
 var __vue_is_functional_template__$1 = false;
@@ -1040,7 +1053,9 @@ var __vue_component__$1 = /*#__PURE__*/normalizeComponent({
     //general
     files: {
       type: Array,
-      default: null
+      default: function _default() {
+        return [];
+      }
     },
     file: {
       type: Object,
@@ -1146,10 +1161,10 @@ var __vue_staticRenderFns__ = [];
 var __vue_inject_styles__ = undefined;
 /* scoped */
 
-var __vue_scope_id__ = "data-v-3e14dc30";
+var __vue_scope_id__ = "data-v-5105b535";
 /* module identifier */
 
-var __vue_module_identifier__ = "data-v-3e14dc30";
+var __vue_module_identifier__ = "data-v-5105b535";
 /* functional template */
 
 var __vue_is_functional_template__ = false;

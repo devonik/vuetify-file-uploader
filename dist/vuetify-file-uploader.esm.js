@@ -847,18 +847,30 @@ var __vue_render__$2 = function () {
         return [_c('v-card-title', [_vm._v("No preview available")])];
       },
       proxy: true
-    }], null, false, 1656814713)
-  }, [_vm._v(" "), _c('v-card-title', {
-    staticClass: "white--text",
-    domProps: {
-      "textContent": _vm._s(_vm.internalFile.title)
-    }
-  }), _vm._v(" "), _c('v-card-subtitle', {
-    staticClass: "white--text",
-    domProps: {
-      "textContent": _vm._s(_vm.internalFile.type)
-    }
-  })], 1) : _vm.showPlaceholder ? _c('FileCardPlaceholder', _vm._b({
+    }, {
+      key: "title",
+      fn: function () {
+        return [_c('v-card-title', {
+          staticClass: "white--text",
+          domProps: {
+            "textContent": _vm._s(_vm.internalFile.title)
+          }
+        })];
+      },
+      proxy: true
+    }, {
+      key: "subtitle",
+      fn: function () {
+        return [_c('v-card-subtitle', {
+          staticClass: "white--text",
+          domProps: {
+            "textContent": _vm._s(_vm.internalFile.type)
+          }
+        })];
+      },
+      proxy: true
+    }], null, false, 1382629025)
+  }) : _vm.showPlaceholder ? _c('FileCardPlaceholder', _vm._b({
     attrs: {
       "image-height": _vm.imageHeight
     },
@@ -874,7 +886,7 @@ var __vue_staticRenderFns__$2 = [];
 const __vue_inject_styles__$2 = undefined;
 /* scoped */
 
-const __vue_scope_id__$2 = "data-v-17be91da";
+const __vue_scope_id__$2 = "data-v-4208a2e4";
 /* module identifier */
 
 const __vue_module_identifier__$2 = undefined;
@@ -949,7 +961,7 @@ var script$1 = {
   },
 
   mounted() {
-    if (this.files) this.internalFiles = Object.assign(this.files);
+    this.internalFiles = Object.assign(this.files);
   },
 
   data() {
@@ -969,7 +981,8 @@ var script$1 = {
         type,
         imageSrc
       });
-      this.files.push({
+      console.log("this.files", this.files);
+      this.internalFiles.push({
         title,
         type,
         imageSrc
@@ -999,7 +1012,7 @@ var __vue_render__$1 = function () {
     staticClass: "file-uploader-card-list"
   }, [_vm.listLayout === _vm.listLayouts.GRID ? [_c('v-row', [_vm._l(_vm.files, function (file) {
     return _c('v-col', {
-      key: file.title,
+      key: file.id ? file.id : file.title,
       attrs: {
         "cols": "12",
         "sm": _vm.gridCols
@@ -1029,7 +1042,7 @@ var __vue_staticRenderFns__$1 = [];
 const __vue_inject_styles__$1 = undefined;
 /* scoped */
 
-const __vue_scope_id__$1 = "data-v-db66a788";
+const __vue_scope_id__$1 = "data-v-af853a80";
 /* module identifier */
 
 const __vue_module_identifier__$1 = undefined;
@@ -1058,7 +1071,7 @@ var script = {
     //general
     files: {
       type: Array,
-      default: null
+      default: () => []
     },
     file: {
       type: Object,
@@ -1169,7 +1182,7 @@ var __vue_staticRenderFns__ = [];
 const __vue_inject_styles__ = undefined;
 /* scoped */
 
-const __vue_scope_id__ = "data-v-3e14dc30";
+const __vue_scope_id__ = "data-v-5105b535";
 /* module identifier */
 
 const __vue_module_identifier__ = undefined;
