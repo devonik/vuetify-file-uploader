@@ -1,6 +1,8 @@
 {
   "name": "vuetify-file-uploader",
   "version": "1.0.0",
+  "author": "devnik <developer@niklas-grieger.dev> (https://niklas-grieger.dev)",
+  "license": "MIT",
   "description": "",
   "scripts": {
     "serve": "vue-cli-service serve dev/serve.js",
