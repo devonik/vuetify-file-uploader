@@ -1188,7 +1188,7 @@ var __vue_component__ = /*#__PURE__*/normalizeComponent({
     Vue.component(componentName, component);
   });
 }; // Create module definition for Vue.use()
-var components=/*#__PURE__*/Object.freeze({__proto__:null,'default': install,FileUploader: __vue_component__,AvatarUploader: __vue_component__$4,FileCard: __vue_component__$2,FileCardList: __vue_component__$1});// only expose one global var, with component exports exposed as properties of
+var components=/*#__PURE__*/Object.freeze({__proto__:null,'default': install,Utils: utils,FileUploader: __vue_component__,AvatarUploader: __vue_component__$4,FileCard: __vue_component__$2,FileCardList: __vue_component__$1});// only expose one global var, with component exports exposed as properties of
 // that global var (eg. plugin.component)
 
 Object.entries(components).forEach(function (_ref) {

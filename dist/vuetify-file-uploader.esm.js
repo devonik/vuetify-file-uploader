@@ -1219,4 +1219,4 @@ const install = function installVuetifyFileUploader(Vue) {
 }; // Create module definition for Vue.use()
 
 export default install;
-export { __vue_component__$4 as AvatarUploader, __vue_component__$2 as FileCard, __vue_component__$1 as FileCardList, __vue_component__ as FileUploader };
+export { __vue_component__$4 as AvatarUploader, __vue_component__$2 as FileCard, __vue_component__$1 as FileCardList, __vue_component__ as FileUploader, utils as Utils };
