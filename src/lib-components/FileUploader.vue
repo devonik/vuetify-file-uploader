@@ -31,7 +31,7 @@ export default {
     //general
     files: {
       type: Array,
-      default: null,
+      default: () => [],
     },
     file: {
       type: Object,

@@ -264,13 +264,25 @@ export default {
           type: "dummy",
           imageSrc: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
         },
+        {
+          id: 1,
+          title: "Remote Picture with ID",
+          type: "dummy",
+          imageSrc: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
+        },
+        {
+          id: 2,
+          title: "Remote Picture with ID",
+          type: "dummy",
+          imageSrc: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
+        },
       ];
     },
     setDummyAvatar() {
       this.settings.file = {
-        title: "John",
+        title: "devnik",
         type: "dummy",
-        imageSrc: "https://avatars0.githubusercontent.com/u/9064066?v=4&s=460",
+        imageSrc: "https://avatars.githubusercontent.com/u/16446467?s=400&v=4",
       };
     },
   },

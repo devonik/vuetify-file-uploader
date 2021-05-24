@@ -2,7 +2,12 @@
   <div class="file-uploader-card-list">
     <template v-if="listLayout === listLayouts.GRID">
       <v-row>
-        <v-col v-for="file in files" :key="file.title" cols="12" :sm="gridCols">
+        <v-col
+          v-for="file in files"
+          :key="file.id ? file.id : file.title"
+          cols="12"
+          :sm="gridCols"
+        >
           <FileCard
             :file="file"
             :contain="contain"
@@ -74,7 +79,7 @@ export default {
     },
   },
   mounted() {
-    if (this.files) this.internalFiles = Object.assign(this.files);
+    this.internalFiles = Object.assign(this.files);
   },
   data() {
     return {
@@ -84,7 +89,8 @@ export default {
   methods: {
     addFile({ title, type, imageSrc }) {
       console.log("addFile", { title, type, imageSrc });
-      this.files.push({
+      console.log("this.files", this.files);
+      this.internalFiles.push({
         title,
         type,
         imageSrc,
