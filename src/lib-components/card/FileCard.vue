@@ -76,7 +76,6 @@ export default {
   },
   watch: {
     file(oldVal, newVal) {
-      console.log("item oldVal, newVal", oldVal, newVal);
       if (oldVal !== newVal) this.internalFile = Object.assign(this.file);
     },
   },

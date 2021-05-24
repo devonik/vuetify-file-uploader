@@ -86,8 +86,6 @@ export default {
       // allows only 1 file
       if (files.length === 1) {
         let file = files[0];
-        console.log("want to drag drop file with size", file.size);
-        console.log("maxSize", this.maxSize);
         const size = file.size / 1024;
 
         //Check if file type is allowed

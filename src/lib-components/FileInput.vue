@@ -72,7 +72,6 @@ export default {
       }
     },
     upload(file) {
-      console.log("manage upload", file);
       this.isLoading = true;
       const reader = new FileReader();
       reader.onload = (f) => {

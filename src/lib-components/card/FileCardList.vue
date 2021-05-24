@@ -74,7 +74,6 @@ export default {
   },
   watch: {
     internalFiles(oldVal, newVal) {
-      console.log("item oldVal, newVal", oldVal, newVal);
       if (oldVal !== newVal) this.internalFiles = Object.assign(this.files);
     },
   },
@@ -88,8 +87,6 @@ export default {
   },
   methods: {
     addFile({ title, type, imageSrc }) {
-      console.log("addFile", { title, type, imageSrc });
-      console.log("this.files", this.files);
       this.internalFiles.push({
         title,
         type,

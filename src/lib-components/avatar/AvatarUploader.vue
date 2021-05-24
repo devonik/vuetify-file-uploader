@@ -77,7 +77,6 @@ export default {
   },
   watch: {
     file(oldVal, newVal) {
-      console.log("item oldVal, newVal", oldVal, newVal);
       if (oldVal !== newVal) this.internalFile = Object.assign(this.file);
     },
   },
@@ -94,7 +93,6 @@ export default {
   },
   methods: {
     addFile({ title, type, imageSrc }) {
-      console.log("drop done", title, type, imageSrc);
       this.internalFile = {
         title,
         type,
