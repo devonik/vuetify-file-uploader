@@ -30,7 +30,7 @@ And use it everywhere
 <FileUploader></FileUploader>
 ```
 
-### Options 2: use local
+### Options 2: register local
 ```js
 import { FileUploader } from 'vuetify-file-uploader'
 export default {
@@ -50,6 +50,19 @@ And use it local
 ### Components
 You can decide for yourself whether to use FileUploader or directly one of the other components. All props listed in the other components can also be passed to FileUploader
 #### FileUploader
+[Global](#options-1-register-global) use
+> FileUploader can be used out of the box
+
+[Local](#options-2-register-local) use
+```js
+import { FileUploader } from 'vuetify-file-uploader'
+export default {
+  name: 'app',
+  components: {
+    FileUploader
+  }
+}
+```
 ##### Props
 > You can also pass all props from the components [FileCard](#filecard), [FileCardList](#filecardlist) and [AvatarUploader](#avataruploader)
 
@@ -75,6 +88,21 @@ You can decide for yourself whether to use FileUploader or directly one of the o
 | addFile | {title, type, imageSrc}|
 
 #### FileCard
+
+[Global](#options-1-register-global) use
+> FileCard can be used out of the box
+
+[Local](#options-2-register-local) use
+```js
+import { FileCard } from 'vuetify-file-uploader'
+export default {
+  name: 'app',
+  components: {
+    FileCard
+  }
+}
+```
+
 ##### Props
 | Prop            | Type             | Default                     |
 |-----------------|------------------|-----------------------------|
@@ -102,6 +130,19 @@ You can decide for yourself whether to use FileUploader or directly one of the o
 | addFile | {title, type, imageSrc}|
 
 #### FileCardList
+[Global](#options-1-register-global) use
+> FileCardList can be used out of the box
+
+[Local](#options-2-register-local) use
+```js
+import { FileCardList } from 'vuetify-file-uploader'
+export default {
+  name: 'app',
+  components: {
+    FileCardList
+  }
+}
+```
 ##### Props
 | Prop             | Type             | Default  | Options        | Comment                  |
 |------------------|------------------|----------|----------------|--------------------------|
@@ -132,6 +173,19 @@ You can decide for yourself whether to use FileUploader or directly one of the o
 | addFile | {title, type, imageSrc}|
 
 #### AvatarUploader
+[Global](#options-1-register-global) use 
+> AvatarUploader can be used out of the box
+
+[Local](#options-2-register-local) use
+```js
+import { AvatarUploader } from 'vuetify-file-uploader'
+export default {
+  name: 'app',
+  components: {
+    AvatarUploader
+  }
+}
+```
 ##### Props
 | Prop             | Type             | Default                     | Options                             | Comment                                      |
 |------------------|------------------|-----------------------------|-------------------------------------|----------------------------------------------|

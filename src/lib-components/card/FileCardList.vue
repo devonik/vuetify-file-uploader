@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import helper from "@/assets/helper";
+import helper from "@/utils";
 import FileCardPlaceholder from "@/lib-components/card/FileCardPlaceholder";
 import FileCard from "@/lib-components/card/FileCard";
 export default {

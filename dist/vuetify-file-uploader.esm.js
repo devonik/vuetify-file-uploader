@@ -1026,7 +1026,7 @@ var __vue_staticRenderFns__$1 = [];
 const __vue_inject_styles__$1 = undefined;
 /* scoped */
 
-const __vue_scope_id__$1 = "data-v-dfe9ca40";
+const __vue_scope_id__$1 = "data-v-2f5fb657";
 /* module identifier */
 
 const __vue_module_identifier__$1 = undefined;
@@ -1184,7 +1184,7 @@ var __vue_staticRenderFns__ = [];
 const __vue_inject_styles__ = undefined;
 /* scoped */
 
-const __vue_scope_id__ = "data-v-ce19b51a";
+const __vue_scope_id__ = "data-v-1b06bcc8";
 /* module identifier */
 
 const __vue_module_identifier__ = undefined;
@@ -1207,7 +1207,8 @@ var components = /*#__PURE__*/Object.freeze({
   FileUploader: __vue_component__,
   AvatarUploader: __vue_component__$4,
   FileCard: __vue_component__$2,
-  FileCardList: __vue_component__$1
+  FileCardList: __vue_component__$1,
+  utils: helper
 });
 
 // Import vue components
@@ -1219,4 +1220,4 @@ const install = function installVuetifyFileUploader(Vue) {
 }; // Create module definition for Vue.use()
 
 export default install;
-export { __vue_component__$4 as AvatarUploader, __vue_component__$2 as FileCard, __vue_component__$1 as FileCardList, __vue_component__ as FileUploader };
+export { __vue_component__$4 as AvatarUploader, __vue_component__$2 as FileCard, __vue_component__$1 as FileCardList, __vue_component__ as FileUploader, helper as utils };

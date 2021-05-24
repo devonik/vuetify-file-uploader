@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import helper from "@/assets/helper";
+import helper from "@/utils";
 import AvatarUploader from "@/lib-components/avatar/AvatarUploader";
 import FileCardList from "@/lib-components/card/FileCardList";
 import FileCard from "@/lib-components/card/FileCard";

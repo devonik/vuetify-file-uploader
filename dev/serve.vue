@@ -223,7 +223,7 @@
 </template>
 <script>
 import FileUploader from "@/lib-components/FileUploader";
-import helper from "@/assets/helper";
+import helper from "@/utils";
 function defaultSettings() {
   return {
     layout: "card",
