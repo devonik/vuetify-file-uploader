@@ -898,7 +898,9 @@ var __vue_component__$2 = /*#__PURE__*/normalizeComponent({
     },
     files: {
       type: Array,
-      default: null
+      default: function _default() {
+        return [];
+      }
     },
     gridCols: {
       type: [String, Number],
@@ -1011,10 +1013,10 @@ var __vue_staticRenderFns__$1 = [];
 var __vue_inject_styles__$1 = undefined;
 /* scoped */
 
-var __vue_scope_id__$1 = "data-v-2c03363e";
+var __vue_scope_id__$1 = "data-v-db66a788";
 /* module identifier */
 
-var __vue_module_identifier__$1 = "data-v-2c03363e";
+var __vue_module_identifier__$1 = "data-v-db66a788";
 /* functional template */
 
 var __vue_is_functional_template__$1 = false;

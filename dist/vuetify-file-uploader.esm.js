@@ -907,7 +907,7 @@ var script$1 = {
     },
     files: {
       type: Array,
-      default: null
+      default: () => []
     },
     gridCols: {
       type: [String, Number],
@@ -1029,7 +1029,7 @@ var __vue_staticRenderFns__$1 = [];
 const __vue_inject_styles__$1 = undefined;
 /* scoped */
 
-const __vue_scope_id__$1 = "data-v-2c03363e";
+const __vue_scope_id__$1 = "data-v-db66a788";
 /* module identifier */
 
 const __vue_module_identifier__$1 = undefined;

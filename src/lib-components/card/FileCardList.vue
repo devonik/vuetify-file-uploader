@@ -35,7 +35,7 @@ export default {
     },
     files: {
       type: Array,
-      default: null,
+      default: () => [],
     },
     gridCols: {
       type: [String, Number],
