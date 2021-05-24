@@ -3,7 +3,9 @@
 
 # Quick Start
 ## Install using npm
-``` npm install filepond ```
+```shell
+npm install vuetify-file-uploader 
+```
 
 ## import component
 > You can decide for yourself whether to use FileUploader with the layout prop or directly one of the [component](#components) listed below.
