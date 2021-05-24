@@ -39,7 +39,6 @@ export default {
     },
     layout: {
       type: String,
-      required: true,
       default: "card",
     },
     allowedFileTypes: {

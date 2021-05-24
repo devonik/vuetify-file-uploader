@@ -74,7 +74,7 @@ export default {
     },
   },
   mounted() {
-    this.internalFiles = Object.assign(this.files);
+    if (this.files) this.internalFiles = Object.assign(this.files);
   },
   data() {
     return {
