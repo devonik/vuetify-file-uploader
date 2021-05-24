@@ -8,11 +8,11 @@
           cols="12"
           :sm="gridCols"
         >
-          <FileCard
-            :file="file"
-            :contain="contain"
-            :image-height="imageHeight"
-          />
+          <FileCard :file="file" :contain="contain" :image-height="imageHeight">
+            <template v-for="(index, name) in $slots" v-slot:[name]>
+              <slot :name="name" />
+            </template>
+          </FileCard>
         </v-col>
         <v-col class="d-flex flex-column" v-if="showPlaceholder">
           <FileCardPlaceholder

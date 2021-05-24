@@ -58,127 +58,164 @@
               </v-row>
             </v-card-text>
           </v-card>
-          <v-card v-if="settings.layout === layouts.CARD">
-            <v-card-title>Single card options</v-card-title>
-            <v-card-text>
-              <v-row align="end">
-                <v-col>
-                  <v-text-field
-                    v-model="settings.imageHeight"
-                    type="number"
-                    suffix="px"
-                    label="Card image height"
-                    hide-details
-                  ></v-text-field>
-                </v-col>
-                <v-col>
-                  <v-switch
-                    v-model="settings.contain"
-                    label="Contain image"
-                    hide-details
+          <v-expansion-panels
+            v-if="settings.layout === layouts.CARD"
+            multiple
+            focusable
+          >
+            <v-expansion-panel>
+              <v-expansion-panel-header>
+                Single card props
+              </v-expansion-panel-header>
+              <v-expansion-panel-content>
+                <v-row align="end">
+                  <v-col>
+                    <v-text-field
+                      v-model="settings.imageHeight"
+                      type="number"
+                      suffix="px"
+                      label="Card image height"
+                      hide-details
+                    ></v-text-field>
+                  </v-col>
+                  <v-col>
+                    <v-switch
+                      v-model="settings.contain"
+                      label="Contain image"
+                      hide-details
+                    >
+                    </v-switch>
+                  </v-col>
+                  <v-col
+                    ><v-btn color="primary" @click="setDummyFile"
+                      >Set dummy file</v-btn
+                    ></v-col
                   >
-                  </v-switch>
-                </v-col>
-              </v-row>
-            </v-card-text>
-            <v-card-actions>
-              <v-btn color="primary" @click="setDummyFile"
-                >Set dummy file</v-btn
-              >
-            </v-card-actions>
-          </v-card>
-          <v-card v-if="settings.layout === layouts.CARD_LIST">
-            <v-card-title>Card list options</v-card-title>
-            <v-card-text>
-              <v-row align="end">
-                <v-col cols="12" sm="6">
-                  <v-autocomplete
-                    v-model="settings.listLayout"
-                    :items="settingsListLayouts"
-                    label="Layout"
-                    hide-details
-                  ></v-autocomplete>
-                </v-col>
-                <v-col cols="12" sm="6">
-                  <v-text-field
-                    v-model="settings.imageHeight"
-                    type="number"
-                    suffix="px"
-                    label="Card image height"
-                    hide-details
-                  ></v-text-field>
-                </v-col>
-                <v-col cols="12" sm="6">
-                  <v-slider
-                    v-model="settings.gridCols"
-                    label="Grid cols per card"
-                    thumb-label="always"
-                    max="12"
-                    hide-details
-                  ></v-slider>
-                </v-col>
-                <v-col cols="12" sm="6">
-                  <v-switch
-                    v-model="settings.showPlaceholder"
-                    label="Show placeholder card"
-                    hide-details
-                  ></v-switch>
-                </v-col>
-              </v-row>
-            </v-card-text>
-            <v-card-actions>
-              <v-btn color="primary" @click="setDummyFiles"
-                >Set dummy files</v-btn
-              >
-            </v-card-actions>
-          </v-card>
-          <v-card v-if="settings.layout === layouts.AVATAR">
-            <v-card-title>Single card options</v-card-title>
-            <v-card-text>
-              <v-row align="end">
-                <v-col>
-                  <v-text-field
-                    v-model="settings.minWidth"
-                    type="number"
-                    suffix="px"
-                    label="Avatar image minimum width"
-                    hide-details
-                  ></v-text-field>
-                </v-col>
-                <v-col>
-                  <v-text-field
-                    v-model="settings.minHeight"
-                    type="number"
-                    suffix="px"
-                    label="Avatar image minimum height"
-                    hide-details
-                  ></v-text-field>
-                </v-col>
-                <v-col>
-                  <v-switch
-                    v-model="settings.contain"
-                    label="Contain image"
-                    hide-details
-                  >
-                  </v-switch>
-                </v-col>
-                <v-col>
-                  <v-text-field
-                    v-model="settings.color"
-                    label="Color"
-                    hide-details
-                  >
-                  </v-text-field>
-                </v-col>
-              </v-row>
-            </v-card-text>
-            <v-card-actions>
-              <v-btn color="primary" @click="setDummyAvatar"
-                >Set dummy avatar</v-btn
-              >
-            </v-card-actions>
-          </v-card>
-          <FileUploader class="mt-6" v-bind="settings"></FileUploader>
+                </v-row>
+              </v-expansion-panel-content>
+            </v-expansion-panel>
+          </v-expansion-panels>
+          <v-expansion-panels
+            v-if="settings.layout === layouts.CARD_LIST"
+            multiple
+            focusable
+          >
+            <v-expansion-panel>
+              <v-expansion-panel-header>
+                Card list props
+              </v-expansion-panel-header>
+              <v-expansion-panel-content>
+                <v-row align="end">
+                  <v-col cols="12" sm="6">
+                    <v-autocomplete
+                      v-model="settings.listLayout"
+                      :items="settingsListLayouts"
+                      label="Layout"
+                      hide-details
+                    ></v-autocomplete>
+                  </v-col>
+                  <v-col cols="12" sm="6">
+                    <v-text-field
+                      v-model="settings.imageHeight"
+                      type="number"
+                      suffix="px"
+                      label="Card image height"
+                      hide-details
+                    ></v-text-field>
+                  </v-col>
+                  <v-col cols="12" sm="6">
+                    <v-slider
+                      v-model="settings.gridCols"
+                      label="Grid cols per card"
+                      thumb-label="always"
+                      max="12"
+                      hide-details
+                    ></v-slider>
+                  </v-col>
+                  <v-col cols="12" sm="6">
+                    <v-switch
+                      v-model="settings.showPlaceholder"
+                      label="Show placeholder card"
+                      hide-details
+                    ></v-switch>
+                  </v-col>
+                  <v-col>
+                    <v-btn color="primary" @click="setDummyFiles"
+                      >Set dummy files</v-btn
+                    >
+                  </v-col>
+                </v-row>
+              </v-expansion-panel-content>
+            </v-expansion-panel>
+            <v-expansion-panel>
+              <v-expansion-panel-header>
+                Available slots
+              </v-expansion-panel-header>
+              <v-expansion-panel-content>
+                <v-row>
+                  <v-col cols="12" sm="6">
+                    <h4>Slots for single card (examples)</h4>
+                    <pre><code v-text="cardSlotsExample"></code></pre>
+                  </v-col>
+                </v-row>
+              </v-expansion-panel-content>
+            </v-expansion-panel>
+          </v-expansion-panels>
+          <v-expansion-panels
+            v-if="settings.layout === layouts.AVATAR"
+            multiple
+            focusable
+          >
+            <v-expansion-panel>
+              <v-expansion-panel-header>
+                Avatar props
+              </v-expansion-panel-header>
+              <v-expansion-panel-content>
+                <v-row align="end">
+                  <v-col>
+                    <v-text-field
+                      v-model="settings.minWidth"
+                      type="number"
+                      suffix="px"
+                      label="Avatar image minimum width"
+                      hide-details
+                    ></v-text-field>
+                  </v-col>
+                  <v-col>
+                    <v-text-field
+                      v-model="settings.minHeight"
+                      type="number"
+                      suffix="px"
+                      label="Avatar image minimum height"
+                      hide-details
+                    ></v-text-field>
+                  </v-col>
+                  <v-col>
+                    <v-switch
+                      v-model="settings.contain"
+                      label="Contain image"
+                      hide-details
+                    >
+                    </v-switch>
+                  </v-col>
+                  <v-col>
+                    <v-text-field
+                      v-model="settings.color"
+                      label="Color"
+                      hide-details
+                    >
+                    </v-text-field>
+                  </v-col>
+                  <v-col>
+                    <v-btn color="primary" @click="setDummyAvatar"
+                      >Set dummy avatar</v-btn
+                    >
+                  </v-col>
+                </v-row>
+              </v-expansion-panel-content>
+            </v-expansion-panel>
+          </v-expansion-panels>
+          <FileUploader class="mt-6" v-bind="settings" />
         </v-container>
       </v-main>
     </v-app>
@@ -212,6 +249,14 @@ export default {
     return {
       settings: defaultSettings(),
       isSettingsOpen: false,
+      cardSlotsExample: `
+            <template #title>
+              <v-card-title class="white--text"> Another title </v-card-title>
+            </template>
+
+            <template #subtitle>
+              <v-card-subtitle class="white--text">Another subtitle</v-card-subtitle>
+            </template> `,
     };
   },
   computed: {

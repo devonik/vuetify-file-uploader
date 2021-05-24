@@ -14,7 +14,7 @@ TODO npm install ...
     ```js
    <FileUploader></FileUploader>
    ```
-   
+
 ## configuration
 ### Props
 #### FileUploader
@@ -48,10 +48,10 @@ TODO npm install ...
 #### AvatarUploader
 | Prop             | Type             | Default                     | Options                             | Comment                                      |
 |------------------|------------------|-----------------------------|-------------------------------------|----------------------------------------------|
-| file             | Object           | null                        | {title: "", type: "", imageSrc: ""} | Set initial file                             |
+| file             | Object           | null                        | {id: "",title: "", type: "", imageSrc: ""} | Set initial file                             |
 | minWidth         | String \| Number | 265                         |                                     | Min width of avatar wrapper and image        |
 | minWidth         | String \| Number | 265                         |                                     | Min height of avatar wrapper and image       |
-| color            | String           | grey                        |                                     | Color in avatar wrapper if no image is given |
+| color            | String           | "grey"                        |                                     | Color in avatar wrapper if no image is given |
 | imageAlt         | String           | "Picture could not be load" |                                     | Text shown if the image could not be load    |
 | allowedFileTypes | String \| Number | "image/"                    | See #fileTypes                      |                                              |
 | maxSize          | String \| Number | 2048                        |                                     | Max file size (Kilobyte)                     |
@@ -62,6 +62,19 @@ TODO npm install ...
 | Name    | Payload                 | Availability                                         |
 |---------|-------------------------|------------------------------------------------------|
 | addFile | {title, type, imageSrc} | FileUploader, FileCard, FileCardList, AvatarUploader |
+
+### Slots
+#### FileCard
+> Can be passed to FileUploader, FileCard, FileCardList
+```js
+
+<template #title>
+  <v-card-title class="white--text"> Another title </v-card-title>
+</template>
+<template #subtitle>
+  <v-card-subtitle class="white--text">Another subtitle</v-card-subtitle>
+</template>
+```
 
 ## Dependecies (as peer dependecies)
 - vue

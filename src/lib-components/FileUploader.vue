@@ -4,12 +4,20 @@
       v-bind="$props"
       v-if="layout === layouts.CARD"
       @addFile="(data) => $emit('addFile', data)"
-    />
+    >
+      <template v-for="(index, name) in $slots" v-slot:[name]>
+        <slot :name="name" />
+      </template>
+    </FileCard>
     <FileCardList
       v-bind="$props"
       v-if="layout === layouts.CARD_LIST"
       @addFile="(data) => $emit('addFile', data)"
-    />
+    >
+      <template v-for="(index, name) in $slots" v-slot:[name]>
+        <slot :name="name" />
+      </template>
+    </FileCardList>
     <AvatarUploader
       v-bind="$props"
       v-else-if="layout === layouts.AVATAR"

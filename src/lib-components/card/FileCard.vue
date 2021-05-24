@@ -17,18 +17,18 @@
       <template #placeholder>
         <v-card-title>No preview available</v-card-title>
       </template>
-      <template #title>
+      <slot name="title">
         <v-card-title
           class="white--text"
           v-text="internalFile.title"
         ></v-card-title>
-      </template>
-      <template #subtitle>
+      </slot>
+      <slot name="subtitle">
         <v-card-subtitle
           class="white--text"
           v-text="internalFile.type"
         ></v-card-subtitle>
-      </template>
+      </slot>
     </v-img>
     <FileCardPlaceholder
       v-else-if="showPlaceholder"
