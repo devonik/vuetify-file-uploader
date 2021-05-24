@@ -95,7 +95,6 @@ var script$6 = {
     },
 
     upload(file) {
-      console.log("manage upload", file);
       this.isLoading = true;
       const reader = new FileReader();
 
@@ -221,7 +220,7 @@ var __vue_staticRenderFns__$6 = [];
 const __vue_inject_styles__$6 = undefined;
 /* scoped */
 
-const __vue_scope_id__$6 = "data-v-4f952800";
+const __vue_scope_id__$6 = "data-v-51f77ebb";
 /* module identifier */
 
 const __vue_module_identifier__$6 = undefined;
@@ -304,8 +303,6 @@ var script$5 = {
 
       if (files.length === 1) {
         let file = files[0];
-        console.log("want to drag drop file with size", file.size);
-        console.log("maxSize", this.maxSize);
         const size = file.size / 1024; //Check if file type is allowed
 
         if (typeof this.allowedFileTypes === "string") isFileTypeAllowed = file.type.indexOf(this.allowedFileTypes) >= 0;else if (this.allowedFileTypes.length > 0) {
@@ -462,8 +459,8 @@ var __vue_staticRenderFns__$5 = [];
 
 const __vue_inject_styles__$5 = function (inject) {
   if (!inject) return;
-  inject("data-v-78f4e455_0", {
-    source: ".drop[data-v-78f4e455]{cursor:pointer;width:100%;height:100%;background-color:#eee;border:10px solid #eee;display:flex;align-items:center;justify-content:center;padding:1rem;transition:background-color .2s ease-in-out;font-family:sans-serif}.isDragging[data-v-78f4e455]{background-color:#999;border-color:#fff}",
+  inject("data-v-23f73223_0", {
+    source: ".drop[data-v-23f73223]{cursor:pointer;width:100%;height:100%;background-color:#eee;border:10px solid #eee;display:flex;align-items:center;justify-content:center;padding:1rem;transition:background-color .2s ease-in-out;font-family:sans-serif}.isDragging[data-v-23f73223]{background-color:#999;border-color:#fff}",
     map: undefined,
     media: undefined
   });
@@ -471,7 +468,7 @@ const __vue_inject_styles__$5 = function (inject) {
 /* scoped */
 
 
-const __vue_scope_id__$5 = "data-v-78f4e455";
+const __vue_scope_id__$5 = "data-v-23f73223";
 /* module identifier */
 
 const __vue_module_identifier__$5 = undefined;
@@ -540,7 +537,6 @@ var script$4 = {
 
   watch: {
     file(oldVal, newVal) {
-      console.log("item oldVal, newVal", oldVal, newVal);
       if (oldVal !== newVal) this.internalFile = Object.assign(this.file);
     }
 
@@ -562,7 +558,6 @@ var script$4 = {
       type,
       imageSrc
     }) {
-      console.log("drop done", title, type, imageSrc);
       this.internalFile = {
         title,
         type,
@@ -629,7 +624,7 @@ var __vue_staticRenderFns__$4 = [];
 const __vue_inject_styles__$4 = undefined;
 /* scoped */
 
-const __vue_scope_id__$4 = "data-v-91620456";
+const __vue_scope_id__$4 = "data-v-6876c40c";
 /* module identifier */
 
 const __vue_module_identifier__$4 = undefined;
@@ -781,7 +776,6 @@ var script$2 = {
 
   watch: {
     file(oldVal, newVal) {
-      console.log("item oldVal, newVal", oldVal, newVal);
       if (oldVal !== newVal) this.internalFile = Object.assign(this.file);
     }
 
@@ -874,7 +868,7 @@ var __vue_staticRenderFns__$2 = [];
 const __vue_inject_styles__$2 = undefined;
 /* scoped */
 
-const __vue_scope_id__$2 = "data-v-05a5fd4a";
+const __vue_scope_id__$2 = "data-v-7c3bc602";
 /* module identifier */
 
 const __vue_module_identifier__$2 = undefined;
@@ -942,7 +936,6 @@ var script$1 = {
   },
   watch: {
     internalFiles(oldVal, newVal) {
-      console.log("item oldVal, newVal", oldVal, newVal);
       if (oldVal !== newVal) this.internalFiles = Object.assign(this.files);
     }
 
@@ -964,12 +957,6 @@ var script$1 = {
       type,
       imageSrc
     }) {
-      console.log("addFile", {
-        title,
-        type,
-        imageSrc
-      });
-      console.log("this.files", this.files);
       this.internalFiles.push({
         title,
         type,
@@ -1039,7 +1026,7 @@ var __vue_staticRenderFns__$1 = [];
 const __vue_inject_styles__$1 = undefined;
 /* scoped */
 
-const __vue_scope_id__$1 = "data-v-9213b2b8";
+const __vue_scope_id__$1 = "data-v-dfe9ca40";
 /* module identifier */
 
 const __vue_module_identifier__$1 = undefined;
@@ -1217,7 +1204,10 @@ const __vue_component__ = /*#__PURE__*/normalizeComponent({
 
 var components = /*#__PURE__*/Object.freeze({
   __proto__: null,
-  FileUploader: __vue_component__
+  FileUploader: __vue_component__,
+  AvatarUploader: __vue_component__$4,
+  FileCard: __vue_component__$2,
+  FileCardList: __vue_component__$1
 });
 
 // Import vue components
@@ -1229,4 +1219,4 @@ const install = function installVuetifyFileUploader(Vue) {
 }; // Create module definition for Vue.use()
 
 export default install;
-export { __vue_component__ as FileUploader };
+export { __vue_component__$4 as AvatarUploader, __vue_component__$2 as FileCard, __vue_component__$1 as FileCardList, __vue_component__ as FileUploader };

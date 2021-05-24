@@ -145,7 +145,6 @@ var script$6 = {
     upload: function upload(file) {
       var _this = this;
 
-      console.log("manage upload", file);
       this.isLoading = true;
       var reader = new FileReader();
 
@@ -267,10 +266,10 @@ var __vue_staticRenderFns__$6 = [];
 var __vue_inject_styles__$6 = undefined;
 /* scoped */
 
-var __vue_scope_id__$6 = "data-v-4f952800";
+var __vue_scope_id__$6 = "data-v-51f77ebb";
 /* module identifier */
 
-var __vue_module_identifier__$6 = "data-v-4f952800";
+var __vue_module_identifier__$6 = "data-v-51f77ebb";
 /* functional template */
 
 var __vue_is_functional_template__$6 = false;
@@ -343,8 +342,6 @@ var __vue_component__$6 = /*#__PURE__*/normalizeComponent({
 
       if (files.length === 1) {
         var file = files[0];
-        console.log("want to drag drop file with size", file.size);
-        console.log("maxSize", this.maxSize);
         var size = file.size / 1024; //Check if file type is allowed
 
         if (typeof this.allowedFileTypes === "string") isFileTypeAllowed = file.type.indexOf(this.allowedFileTypes) >= 0;else if (this.allowedFileTypes.length > 0) {
@@ -486,8 +483,8 @@ var __vue_staticRenderFns__$5 = [];
 
 var __vue_inject_styles__$5 = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-78f4e455_0", {
-    source: ".drop[data-v-78f4e455]{cursor:pointer;width:100%;height:100%;background-color:#eee;border:10px solid #eee;display:flex;align-items:center;justify-content:center;padding:1rem;transition:background-color .2s ease-in-out;font-family:sans-serif}.isDragging[data-v-78f4e455]{background-color:#999;border-color:#fff}",
+  inject("data-v-23f73223_0", {
+    source: ".drop[data-v-23f73223]{cursor:pointer;width:100%;height:100%;background-color:#eee;border:10px solid #eee;display:flex;align-items:center;justify-content:center;padding:1rem;transition:background-color .2s ease-in-out;font-family:sans-serif}.isDragging[data-v-23f73223]{background-color:#999;border-color:#fff}",
     map: undefined,
     media: undefined
   });
@@ -495,10 +492,10 @@ var __vue_inject_styles__$5 = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__$5 = "data-v-78f4e455";
+var __vue_scope_id__$5 = "data-v-23f73223";
 /* module identifier */
 
-var __vue_module_identifier__$5 = "data-v-78f4e455";
+var __vue_module_identifier__$5 = "data-v-23f73223";
 /* functional template */
 
 var __vue_is_functional_template__$5 = false;
@@ -558,7 +555,6 @@ var __vue_component__$5 = /*#__PURE__*/normalizeComponent({
   },
   watch: {
     file: function file(oldVal, newVal) {
-      console.log("item oldVal, newVal", oldVal, newVal);
       if (oldVal !== newVal) this.internalFile = Object.assign(this.file);
     }
   },
@@ -575,7 +571,6 @@ var __vue_component__$5 = /*#__PURE__*/normalizeComponent({
       var title = _ref.title,
           type = _ref.type,
           imageSrc = _ref.imageSrc;
-      console.log("drop done", title, type, imageSrc);
       this.internalFile = {
         title: title,
         type: type,
@@ -639,10 +634,10 @@ var __vue_staticRenderFns__$4 = [];
 var __vue_inject_styles__$4 = undefined;
 /* scoped */
 
-var __vue_scope_id__$4 = "data-v-91620456";
+var __vue_scope_id__$4 = "data-v-6876c40c";
 /* module identifier */
 
-var __vue_module_identifier__$4 = "data-v-91620456";
+var __vue_module_identifier__$4 = "data-v-6876c40c";
 /* functional template */
 
 var __vue_is_functional_template__$4 = false;
@@ -781,7 +776,6 @@ var __vue_component__$3 = /*#__PURE__*/normalizeComponent({
   },
   watch: {
     file: function file(oldVal, newVal) {
-      console.log("item oldVal, newVal", oldVal, newVal);
       if (oldVal !== newVal) this.internalFile = Object.assign(this.file);
     }
   },
@@ -867,10 +861,10 @@ var __vue_staticRenderFns__$2 = [];
 var __vue_inject_styles__$2 = undefined;
 /* scoped */
 
-var __vue_scope_id__$2 = "data-v-05a5fd4a";
+var __vue_scope_id__$2 = "data-v-7c3bc602";
 /* module identifier */
 
-var __vue_module_identifier__$2 = "data-v-05a5fd4a";
+var __vue_module_identifier__$2 = "data-v-7c3bc602";
 /* functional template */
 
 var __vue_is_functional_template__$2 = false;
@@ -934,7 +928,6 @@ var __vue_component__$2 = /*#__PURE__*/normalizeComponent({
   },
   watch: {
     internalFiles: function internalFiles(oldVal, newVal) {
-      console.log("item oldVal, newVal", oldVal, newVal);
       if (oldVal !== newVal) this.internalFiles = Object.assign(this.files);
     }
   },
@@ -951,12 +944,6 @@ var __vue_component__$2 = /*#__PURE__*/normalizeComponent({
       var title = _ref.title,
           type = _ref.type,
           imageSrc = _ref.imageSrc;
-      console.log("addFile", {
-        title: title,
-        type: type,
-        imageSrc: imageSrc
-      });
-      console.log("this.files", this.files);
       this.internalFiles.push({
         title: title,
         type: type,
@@ -1023,10 +1010,10 @@ var __vue_staticRenderFns__$1 = [];
 var __vue_inject_styles__$1 = undefined;
 /* scoped */
 
-var __vue_scope_id__$1 = "data-v-9213b2b8";
+var __vue_scope_id__$1 = "data-v-dfe9ca40";
 /* module identifier */
 
-var __vue_module_identifier__$1 = "data-v-9213b2b8";
+var __vue_module_identifier__$1 = "data-v-dfe9ca40";
 /* functional template */
 
 var __vue_is_functional_template__$1 = false;
@@ -1192,7 +1179,7 @@ var __vue_is_functional_template__ = false;
 var __vue_component__ = /*#__PURE__*/normalizeComponent({
   render: __vue_render__,
   staticRenderFns: __vue_staticRenderFns__
-}, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, false, undefined, undefined, undefined);var components$1=/*#__PURE__*/Object.freeze({__proto__:null,FileUploader: __vue_component__});var install = function installVuetifyFileUploader(Vue) {
+}, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, false, undefined, undefined, undefined);var components$1=/*#__PURE__*/Object.freeze({__proto__:null,FileUploader: __vue_component__,AvatarUploader: __vue_component__$4,FileCard: __vue_component__$2,FileCardList: __vue_component__$1});var install = function installVuetifyFileUploader(Vue) {
   Object.entries(components$1).forEach(function (_ref) {
     var _ref2 = _slicedToArray(_ref, 2),
         componentName = _ref2[0],
@@ -1201,7 +1188,7 @@ var __vue_component__ = /*#__PURE__*/normalizeComponent({
     Vue.component(componentName, component);
   });
 }; // Create module definition for Vue.use()
-var components=/*#__PURE__*/Object.freeze({__proto__:null,'default': install,FileUploader: __vue_component__});// only expose one global var, with component exports exposed as properties of
+var components=/*#__PURE__*/Object.freeze({__proto__:null,'default': install,FileUploader: __vue_component__,AvatarUploader: __vue_component__$4,FileCard: __vue_component__$2,FileCardList: __vue_component__$1});// only expose one global var, with component exports exposed as properties of
 // that global var (eg. plugin.component)
 
 Object.entries(components).forEach(function (_ref) {
