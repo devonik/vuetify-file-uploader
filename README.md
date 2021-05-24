@@ -87,6 +87,18 @@ export default {
 |---------|------------------------|
 | addFile | {title, type, imageSrc}|
 
+##### Enums
+```js
+function layouts() {
+  return {
+    CARD: "card",
+    CARD_LIST: "card-list",
+    AVATAR: "avatar",
+  };
+}
+
+```
+
 #### FileCard
 
 [Global](#options-1-register-global) use
@@ -151,7 +163,7 @@ export default {
 | gridCols         | String \| Number | 6        |                |                          |
 | showPlaceholder  | String           | true     |                |                          |
 | imageHeight      | String \| Number | 200      |                |                          |
-| allowedFileTypes | String \| Number | "image/" | See #fileTypes |                          |
+| allowedFileTypes | String \| Number | "image/" | See [Common file types](#common-file-types) |                          |
 | maxSize          | String \| Number | 2048     |                | Max file size (Kilobyte) |
 | contain          | Boolean          | false    |                | Image contain crop       |
 
@@ -171,6 +183,15 @@ export default {
 | Name    | Payload                |
 |---------|------------------------|
 | addFile | {title, type, imageSrc}|
+
+##### Enums
+```js
+function listLayouts() {
+  return {
+    GRID: "grid",
+  };
+}
+```
 
 #### AvatarUploader
 [Global](#options-1-register-global) use 
@@ -202,6 +223,47 @@ export default {
 | Name    | Payload                |
 |---------|------------------------|
 | addFile | {title, type, imageSrc}|
+
+### Helpers
+#### Common file types
+> If you miss one just google for the content type of you file
+
+```js
+function commonFileTypes() {
+  return [
+    "text/csv",
+    "application/msword",
+    "image/",
+    "image/gif",
+    "image/jpeg",
+    "text/calendar",
+    "application/json",
+    "audio/mpeg",
+    "video/mp4",
+    "video/mpeg",
+    "audio/ogg",
+    "video/ogg",
+    "font/otf",
+    "image/png",
+    "application/pdf",
+    "font/ttf",
+    "text/plain",
+    "audio/wav",
+    "audio/webm",
+    "video/webm",
+    "image/webp",
+    "font/woff",
+    "font/woff2",
+    "application/zip",
+    "video/3gpp",
+    "audio/3gpp",
+    "video/3gpp2",
+    "audio/3gpp2",
+    "application/x-7z-compressed",
+  ];
+};
+
+```
 
 ## Dependencies (as peer dependencies)
 - vue
