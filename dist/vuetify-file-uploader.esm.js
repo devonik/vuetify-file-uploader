@@ -1207,8 +1207,7 @@ var components = /*#__PURE__*/Object.freeze({
   FileUploader: __vue_component__,
   AvatarUploader: __vue_component__$4,
   FileCard: __vue_component__$2,
-  FileCardList: __vue_component__$1,
-  utils: helper
+  FileCardList: __vue_component__$1
 });
 
 // Import vue components
@@ -1220,4 +1219,4 @@ const install = function installVuetifyFileUploader(Vue) {
 }; // Create module definition for Vue.use()
 
 export default install;
-export { __vue_component__$4 as AvatarUploader, __vue_component__$2 as FileCard, __vue_component__$1 as FileCardList, __vue_component__ as FileUploader, helper as utils };
+export { __vue_component__$4 as AvatarUploader, __vue_component__$2 as FileCard, __vue_component__$1 as FileCardList, __vue_component__ as FileUploader };

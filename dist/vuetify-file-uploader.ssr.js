@@ -1179,7 +1179,7 @@ var __vue_is_functional_template__ = false;
 var __vue_component__ = /*#__PURE__*/normalizeComponent({
   render: __vue_render__,
   staticRenderFns: __vue_staticRenderFns__
-}, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, false, undefined, undefined, undefined);var components$1=/*#__PURE__*/Object.freeze({__proto__:null,FileUploader: __vue_component__,AvatarUploader: __vue_component__$4,FileCard: __vue_component__$2,FileCardList: __vue_component__$1,utils: helper});var install = function installVuetifyFileUploader(Vue) {
+}, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, false, undefined, undefined, undefined);var components$1=/*#__PURE__*/Object.freeze({__proto__:null,FileUploader: __vue_component__,AvatarUploader: __vue_component__$4,FileCard: __vue_component__$2,FileCardList: __vue_component__$1});var install = function installVuetifyFileUploader(Vue) {
   Object.entries(components$1).forEach(function (_ref) {
     var _ref2 = _slicedToArray(_ref, 2),
         componentName = _ref2[0],
@@ -1188,7 +1188,7 @@ var __vue_component__ = /*#__PURE__*/normalizeComponent({
     Vue.component(componentName, component);
   });
 }; // Create module definition for Vue.use()
-var components=/*#__PURE__*/Object.freeze({__proto__:null,'default': install,FileUploader: __vue_component__,AvatarUploader: __vue_component__$4,FileCard: __vue_component__$2,FileCardList: __vue_component__$1,utils: helper});// only expose one global var, with component exports exposed as properties of
+var components=/*#__PURE__*/Object.freeze({__proto__:null,'default': install,FileUploader: __vue_component__,AvatarUploader: __vue_component__$4,FileCard: __vue_component__$2,FileCardList: __vue_component__$1});// only expose one global var, with component exports exposed as properties of
 // that global var (eg. plugin.component)
 
 Object.entries(components).forEach(function (_ref) {
