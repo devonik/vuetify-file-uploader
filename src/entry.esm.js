@@ -15,4 +15,4 @@ export default install;
 // each can be registered via Vue.component()
 export * from "@/lib-components/index";
 
-export { default as Utils } from "./utils/index";
+export * as Utils from "@/utils/index";
