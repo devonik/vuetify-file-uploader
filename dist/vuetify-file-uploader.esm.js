@@ -21,11 +21,6 @@ var utils = {
 
 };
 
-var index = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  'default': utils
-});
-
 //
 //
 //
@@ -1224,4 +1219,4 @@ const install = function installVuetifyFileUploader(Vue) {
 }; // Create module definition for Vue.use()
 
 export default install;
-export { __vue_component__$4 as AvatarUploader, __vue_component__$2 as FileCard, __vue_component__$1 as FileCardList, __vue_component__ as FileUploader, index as Utils };
+export { __vue_component__$4 as AvatarUploader, __vue_component__$2 as FileCard, __vue_component__$1 as FileCardList, __vue_component__ as FileUploader };
