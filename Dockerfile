@@ -1,16 +1,13 @@
-# Base the image off of the NodeJS image
-FROM node
-
-# Set the working directory to be the HOME directory
+# build stage
+FROM node:lts-alpine as build-stage
 WORKDIR /app
-
-# Install NPM dependencies early in the build process
-COPY ./package.json /app
-COPY ./package-lock.json /app
+COPY package*.json ./
 RUN npm install
+COPY . .
+RUN npm run build
 
-# Specify what port will be available - necessary for VPC network
+# production stage
+FROM nginx:stable-alpine as production-stage
+COPY --from=build-stage /app/dist /usr/share/nginx/html
 EXPOSE 8080
-
-# Start the container running our Node app
-CMD ["npm", "run", "serve"]
+CMD ["nginx", "-g", "daemon off;"]
