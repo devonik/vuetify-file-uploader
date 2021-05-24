@@ -840,30 +840,18 @@ var __vue_render__$2 = function __vue_render__() {
         return [_c('v-card-title', [_vm._v("No preview available")])];
       },
       proxy: true
-    }, {
-      key: "title",
-      fn: function fn() {
-        return [_c('v-card-title', {
-          staticClass: "white--text",
-          domProps: {
-            "textContent": _vm._s(_vm.internalFile.title)
-          }
-        })];
-      },
-      proxy: true
-    }, {
-      key: "subtitle",
-      fn: function fn() {
-        return [_c('v-card-subtitle', {
-          staticClass: "white--text",
-          domProps: {
-            "textContent": _vm._s(_vm.internalFile.type)
-          }
-        })];
-      },
-      proxy: true
-    }], null, false, 1382629025)
-  }) : _vm.showPlaceholder ? _c('FileCardPlaceholder', _vm._b({
+    }], null, false, 1656814713)
+  }, [_vm._v(" "), _vm._t("title", [_c('v-card-title', {
+    staticClass: "white--text",
+    domProps: {
+      "textContent": _vm._s(_vm.internalFile.title)
+    }
+  })]), _vm._v(" "), _vm._t("subtitle", [_c('v-card-subtitle', {
+    staticClass: "white--text",
+    domProps: {
+      "textContent": _vm._s(_vm.internalFile.type)
+    }
+  })])], 2) : _vm.showPlaceholder ? _c('FileCardPlaceholder', _vm._b({
     attrs: {
       "image-height": _vm.imageHeight
     },
@@ -879,10 +867,10 @@ var __vue_staticRenderFns__$2 = [];
 var __vue_inject_styles__$2 = undefined;
 /* scoped */
 
-var __vue_scope_id__$2 = "data-v-4208a2e4";
+var __vue_scope_id__$2 = "data-v-05a5fd4a";
 /* module identifier */
 
-var __vue_module_identifier__$2 = "data-v-4208a2e4";
+var __vue_module_identifier__$2 = "data-v-05a5fd4a";
 /* functional template */
 
 var __vue_is_functional_template__$2 = false;
@@ -1006,7 +994,16 @@ var __vue_render__$1 = function __vue_render__() {
         "file": file,
         "contain": _vm.contain,
         "image-height": _vm.imageHeight
-      }
+      },
+      scopedSlots: _vm._u([_vm._l(_vm.$slots, function (index, name) {
+        return {
+          key: name,
+          fn: function fn() {
+            return [_vm._t(name)];
+          },
+          proxy: true
+        };
+      })], null, true)
     })], 1);
   }), _vm._v(" "), _vm.showPlaceholder ? _c('v-col', {
     staticClass: "d-flex flex-column"
@@ -1026,10 +1023,10 @@ var __vue_staticRenderFns__$1 = [];
 var __vue_inject_styles__$1 = undefined;
 /* scoped */
 
-var __vue_scope_id__$1 = "data-v-af853a80";
+var __vue_scope_id__$1 = "data-v-9213b2b8";
 /* module identifier */
 
-var __vue_module_identifier__$1 = "data-v-af853a80";
+var __vue_module_identifier__$1 = "data-v-9213b2b8";
 /* functional template */
 
 var __vue_is_functional_template__$1 = false;
@@ -1139,13 +1136,31 @@ var __vue_render__ = function __vue_render__() {
       "addFile": function addFile(data) {
         return _vm.$emit('addFile', data);
       }
-    }
+    },
+    scopedSlots: _vm._u([_vm._l(_vm.$slots, function (index, name) {
+      return {
+        key: name,
+        fn: function fn() {
+          return [_vm._t(name)];
+        },
+        proxy: true
+      };
+    })], null, true)
   }, 'FileCard', _vm.$props, false)) : _vm._e(), _vm._ssrNode(" "), _vm.layout === _vm.layouts.CARD_LIST ? _c('FileCardList', _vm._b({
     on: {
       "addFile": function addFile(data) {
         return _vm.$emit('addFile', data);
       }
-    }
+    },
+    scopedSlots: _vm._u([_vm._l(_vm.$slots, function (index, name) {
+      return {
+        key: name,
+        fn: function fn() {
+          return [_vm._t(name)];
+        },
+        proxy: true
+      };
+    })], null, true)
   }, 'FileCardList', _vm.$props, false)) : _vm.layout === _vm.layouts.AVATAR ? _c('AvatarUploader', _vm._b({
     on: {
       "addFile": function addFile(data) {
@@ -1161,10 +1176,10 @@ var __vue_staticRenderFns__ = [];
 var __vue_inject_styles__ = undefined;
 /* scoped */
 
-var __vue_scope_id__ = "data-v-5105b535";
+var __vue_scope_id__ = "data-v-ce19b51a";
 /* module identifier */
 
-var __vue_module_identifier__ = "data-v-5105b535";
+var __vue_module_identifier__ = "data-v-ce19b51a";
 /* functional template */
 
 var __vue_is_functional_template__ = false;
