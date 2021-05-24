@@ -1,3 +1,6 @@
+> This project is built with vue and vuetify
+> Make sure your project has already vue and vuetify installed
+
 # Quick Start
 ## Install using npm
 ``` npm install filepond ```
