@@ -1,30 +1,76 @@
-# How to use
-## get package
-TODO npm install ...
+# Quick Start
+## Install using npm
+``` npm install filepond ```
 
 ## import component
-1. ```js
-   import FileUploader from "vuetify-file-uploader/FileUploader";
-   export default {
-    name: "app",
-    components: { FileUploader },
-   };
-   ```
-2. Call it in the template
-    ```js
-   <FileUploader></FileUploader>
-   ```
+> You can decide for yourself whether to use FileUploader with the layout prop or directly one of the [component](#components) listed below.
+### Options 1: register global
+```js
+import Vue from 'vue'
+import App from './App.vue'
+import vuetify from './plugins/vuetify'
+import FileUploader from 'vuetify-file-uploader'
 
-## configuration
-### Props
+Vue.config.productionTip = false
+
+Vue.use(FileUploader)
+
+new Vue({
+  vuetify,
+  render: h => h(App)
+}).$mount('#app')
+```
+And use it everywhere 
+```js
+<FileUploader></FileUploader>
+```
+
+### Options 2: use local
+```js
+import { FileUploader } from 'vuetify-file-uploader'
+export default {
+    name: 'app',
+    components: {
+      FileUploader
+    }
+}
+```
+
+And use it local
+```js
+<FileUploader></FileUploader>
+```
+
+## Configuration
+### Components
+You can decide for yourself whether to use FileUploader or directly one of the other components. All props listed in the other components can also be passed to FileUploader
 #### FileUploader
+##### Props
+> You can also pass all props from the components [FileCard](#filecard), [FileCardList](#filecardlist) and [AvatarUploader](#avataruploader)
+
 | Prop   | Type   | Default |
 |--------|--------|---------|
 | layout | String | "card"  |
 
-> You can decide for yourself whether to use FileUploader or directly one of the components listed below. All props listed in the lower components can also be passed to FileUploader
+##### Slots
+> Can be passed to [FileUploader](#fileuploader) ,[FileCard](#filecard) and [FileCardList](#filecardlist)
+```html
+
+<template #title>
+  <v-card-title class="white--text"> Another title </v-card-title>
+</template>
+<template #subtitle>
+  <v-card-subtitle class="white--text">Another subtitle</v-card-subtitle>
+</template>
+```
+
+##### Events
+| Name    | Payload                |
+|---------|------------------------|
+| addFile | {title, type, imageSrc}|
 
 #### FileCard
+##### Props
 | Prop            | Type             | Default                     |
 |-----------------|------------------|-----------------------------|
 | file            | Object           | null                        |
@@ -33,7 +79,25 @@ TODO npm install ...
 | imageAlt        | String           | "Picture could not be load" |
 | contain         | Boolean          | false                       |
 
+##### Slots
+> Can be passed to [FileUploader](#fileuploader) ,[FileCard](#filecard) and [FileCardList](#filecardlist)
+```html
+
+<template #title>
+  <v-card-title class="white--text"> Another title </v-card-title>
+</template>
+<template #subtitle>
+  <v-card-subtitle class="white--text">Another subtitle</v-card-subtitle>
+</template>
+```
+
+##### Events
+| Name    | Payload                |
+|---------|------------------------|
+| addFile | {title, type, imageSrc}|
+
 #### FileCardList
+##### Props
 | Prop             | Type             | Default  | Options        | Comment                  |
 |------------------|------------------|----------|----------------|--------------------------|
 | file             | Object           | null     |                |                          |
@@ -45,7 +109,25 @@ TODO npm install ...
 | maxSize          | String \| Number | 2048     |                | Max file size (Kilobyte) |
 | contain          | Boolean          | false    |                | Image contain crop       |
 
+##### Slots
+> Can be passed to [FileUploader](#fileuploader) ,[FileCard](#filecard) and [FileCardList](#filecardlist)
+```html
+
+<template #title>
+  <v-card-title class="white--text"> Another title </v-card-title>
+</template>
+<template #subtitle>
+  <v-card-subtitle class="white--text">Another subtitle</v-card-subtitle>
+</template>
+```
+
+##### Events
+| Name    | Payload                |
+|---------|------------------------|
+| addFile | {title, type, imageSrc}|
+
 #### AvatarUploader
+##### Props
 | Prop             | Type             | Default                     | Options                             | Comment                                      |
 |------------------|------------------|-----------------------------|-------------------------------------|----------------------------------------------|
 | file             | Object           | null                        | {id: "",title: "", type: "", imageSrc: ""} | Set initial file                             |
@@ -57,26 +139,12 @@ TODO npm install ...
 | maxSize          | String \| Number | 2048                        |                                     | Max file size (Kilobyte)                     |
 | contain          | Boolean          | false                       |                                     | Set image contain                            |
 
-### Events
+##### Events
+| Name    | Payload                |
+|---------|------------------------|
+| addFile | {title, type, imageSrc}|
 
-| Name    | Payload                 | Availability                                         |
-|---------|-------------------------|------------------------------------------------------|
-| addFile | {title, type, imageSrc} | FileUploader, FileCard, FileCardList, AvatarUploader |
-
-### Slots
-#### FileCard
-> Can be passed to FileUploader, FileCard, FileCardList
-```js
-
-<template #title>
-  <v-card-title class="white--text"> Another title </v-card-title>
-</template>
-<template #subtitle>
-  <v-card-subtitle class="white--text">Another subtitle</v-card-subtitle>
-</template>
-```
-
-## Dependecies (as peer dependecies)
+## Dependencies (as peer dependencies)
 - vue
   - 2.6.x
 - vuetify
