@@ -949,7 +949,7 @@ var script$1 = {
   },
 
   mounted() {
-    this.internalFiles = Object.assign(this.files);
+    if (this.files) this.internalFiles = Object.assign(this.files);
   },
 
   data() {
@@ -1029,7 +1029,7 @@ var __vue_staticRenderFns__$1 = [];
 const __vue_inject_styles__$1 = undefined;
 /* scoped */
 
-const __vue_scope_id__$1 = "data-v-05654da4";
+const __vue_scope_id__$1 = "data-v-2c03363e";
 /* module identifier */
 
 const __vue_module_identifier__$1 = undefined;
@@ -1066,7 +1066,6 @@ var script = {
     },
     layout: {
       type: String,
-      required: true,
       default: "card"
     },
     allowedFileTypes: {
@@ -1170,7 +1169,7 @@ var __vue_staticRenderFns__ = [];
 const __vue_inject_styles__ = undefined;
 /* scoped */
 
-const __vue_scope_id__ = "data-v-78f12b3e";
+const __vue_scope_id__ = "data-v-3e14dc30";
 /* module identifier */
 
 const __vue_module_identifier__ = undefined;

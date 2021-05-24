@@ -937,7 +937,7 @@ var __vue_component__$2 = /*#__PURE__*/normalizeComponent({
     }
   },
   mounted: function mounted() {
-    this.internalFiles = Object.assign(this.files);
+    if (this.files) this.internalFiles = Object.assign(this.files);
   },
   data: function data() {
     return {
@@ -1011,10 +1011,10 @@ var __vue_staticRenderFns__$1 = [];
 var __vue_inject_styles__$1 = undefined;
 /* scoped */
 
-var __vue_scope_id__$1 = "data-v-05654da4";
+var __vue_scope_id__$1 = "data-v-2c03363e";
 /* module identifier */
 
-var __vue_module_identifier__$1 = "data-v-05654da4";
+var __vue_module_identifier__$1 = "data-v-2c03363e";
 /* functional template */
 
 var __vue_is_functional_template__$1 = false;
@@ -1046,7 +1046,6 @@ var __vue_component__$1 = /*#__PURE__*/normalizeComponent({
     },
     layout: {
       type: String,
-      required: true,
       default: "card"
     },
     allowedFileTypes: {
@@ -1145,10 +1144,10 @@ var __vue_staticRenderFns__ = [];
 var __vue_inject_styles__ = undefined;
 /* scoped */
 
-var __vue_scope_id__ = "data-v-78f12b3e";
+var __vue_scope_id__ = "data-v-3e14dc30";
 /* module identifier */
 
-var __vue_module_identifier__ = "data-v-78f12b3e";
+var __vue_module_identifier__ = "data-v-3e14dc30";
 /* functional template */
 
 var __vue_is_functional_template__ = false;
