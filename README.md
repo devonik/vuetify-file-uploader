@@ -2,7 +2,7 @@
 > Make sure your project has already vue and vuetify installed
 
 # Playground
-[Demo](https://playground.devnik.dev)
+[Demo](https://playground.devnik.dev/vuetify-file-uploader)
 
 # Quick Start
 ## Install using npm
@@ -166,7 +166,7 @@ export default {
 | gridCols         | String \| Number | 6        |                |                          |
 | showPlaceholder  | String           | true     |                |                          |
 | imageHeight      | String \| Number | 200      |                |                          |
-| allowedFileTypes | String \| Number | "image/" | See [Common file types](#common-file-types) |                          |
+| allowedFileTypes | String \| Array | "image/" | See [Common file types](#common-file-types) |                          |
 | maxSize          | String \| Number | 2048     |                | Max file size (Kilobyte) |
 | contain          | Boolean          | false    |                | Image contain crop       |
 
@@ -218,7 +218,7 @@ export default {
 | minWidth         | String \| Number | 265                         |                                     | Min height of avatar wrapper and image       |
 | color            | String           | "grey"                        |                                     | Color in avatar wrapper if no image is given |
 | imageAlt         | String           | "Picture could not be load" |                                     | Text shown if the image could not be load    |
-| allowedFileTypes | String \| Number | "image/"                    | See #fileTypes                      |                                              |
+| allowedFileTypes | String \| Array | "image/"                    | See #fileTypes                      |                                              |
 | maxSize          | String \| Number | 2048                        |                                     | Max file size (Kilobyte)                     |
 | contain          | Boolean          | false                       |                                     | Set image contain                            |
 
