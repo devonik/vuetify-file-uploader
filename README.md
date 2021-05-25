@@ -2,7 +2,7 @@
 > Make sure your project has already vue and vuetify installed
 
 # Playground
-[Demo](https://playground.devnik.dev/vuetify-file-uploader)
+[Demo](https://playground.devnik.dev/#/vuetify-file-uploader)
 
 # Quick Start
 ## Install using npm
