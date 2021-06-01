@@ -297,14 +297,11 @@ export default {
       }
     },
     setMockFile() {
-      this.settings.file = Object.assign(
-        {},
-        {
-          title: "Best airlines",
-          type: "image/",
-          src: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
-        }
-      );
+      this.settings.file = {
+        title: "Best airlines",
+        type: "image/",
+        src: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
+      };
     },
     setMockFiles() {
       [
