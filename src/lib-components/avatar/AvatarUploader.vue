@@ -4,7 +4,7 @@
       v-if="internalFile"
       :min-width="minWidth"
       :min-height="minHeight"
-      :src="internalFile.imageSrc"
+      :src="internalFile.src"
       :lazy-src="
         internalFile.imageLazySrc
           ? internalFile.imageLazySrc
@@ -31,6 +31,7 @@
 
 <script>
 import DragDropArea from "@/lib-components/DragDropArea";
+import clonedeep from "lodash.clonedeep";
 export default {
   name: "AvatarUploader",
   components: { DragDropArea },
@@ -77,11 +78,11 @@ export default {
   },
   watch: {
     file(oldVal, newVal) {
-      if (oldVal !== newVal) this.internalFile = Object.assign(this.file);
+      if (oldVal !== newVal) this.internalFile = clonedeep(this.file);
     },
   },
   mounted() {
-    if (this.file) this.internalFile = Object.assign(this.file);
+    if (this.file) this.internalFile = clonedeep(this.file);
   },
   computed: {
     isImgReady() {
@@ -92,13 +93,13 @@ export default {
     },
   },
   methods: {
-    addFile({ title, type, imageSrc }) {
+    addFile({ id, src, file }) {
       this.internalFile = {
-        title,
-        type,
-        imageSrc,
+        id,
+        src,
+        file,
       };
-      this.$emit("addFile", { title, type, imageSrc });
+      this.$emit("addFile", { id, src, file });
     },
   },
 };

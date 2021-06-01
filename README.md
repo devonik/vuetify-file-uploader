@@ -88,7 +88,7 @@ export default {
 ##### Events
 | Name    | Payload                |
 |---------|------------------------|
-| addFile | {title, type, imageSrc}|
+| addFile | {id, src, file}|
 
 ##### Enums
 ```js
@@ -119,13 +119,13 @@ export default {
 ```
 
 ##### Props
-| Prop            | Type             | Default                     |
-|-----------------|------------------|-----------------------------|
-| file            | Object           | null                        |
-| showPlaceholder | Booolean         | true                        |
-| imageHeight     | String \| Number | 200                         |
-| imageAlt        | String           | "Picture could not be load" |
-| contain         | Boolean          | false                       |
+| Prop            | Type             | Default                     | Options        |
+|-----------------|------------------|-----------------------------|----------------|
+| file            | Object           | null                        | {id: "",src: "", file: "", imageLazySrc: ""}               |
+| showPlaceholder | Booolean         | true                        |                |
+| imageHeight     | String \| Number | 200                         |                |
+| imageAlt        | String           | "Picture could not be load" |                |
+| contain         | Boolean          | false                       |                |
 
 ##### Slots
 > Can be passed to [FileUploader](#fileuploader) ,[FileCard](#filecard) and [FileCardList](#filecardlist)
@@ -142,7 +142,7 @@ export default {
 ##### Events
 | Name    | Payload                |
 |---------|------------------------|
-| addFile | {title, type, imageSrc}|
+| addFile | {id, src, file}|
 
 #### FileCardList
 [Global](#options-1-register-global) use
@@ -161,8 +161,8 @@ export default {
 ##### Props
 | Prop             | Type             | Default  | Options        | Comment                  |
 |------------------|------------------|----------|----------------|--------------------------|
-| file             | Object           | null     |                |                          |
-| files            | Array            | null     |                |                          |
+| file             | Object           | null     | {id: "",src: "", file: "", imageLazySrc: ""}|                          |
+| files            | Array            | null     | [{id: "",src: "", file: "", imageLazySrc: ""}]               |                          |
 | gridCols         | String \| Number | 6        |                |                          |
 | showPlaceholder  | String           | true     |                |                          |
 | imageHeight      | String \| Number | 200      |                |                          |
@@ -185,7 +185,7 @@ export default {
 ##### Events
 | Name    | Payload                |
 |---------|------------------------|
-| addFile | {title, type, imageSrc}|
+| addFile | {id, src, file}|
 
 ##### Enums
 ```js
@@ -213,7 +213,7 @@ export default {
 ##### Props
 | Prop             | Type             | Default                     | Options                             | Comment                                      |
 |------------------|------------------|-----------------------------|-------------------------------------|----------------------------------------------|
-| file             | Object           | null                        | {id: "",title: "", type: "", imageSrc: ""} | Set initial file                             |
+| file             | Object           | null                        | {id: "",src: "", file: "", imageLazySrc: ""} | Set initial file                             |
 | minWidth         | String \| Number | 265                         |                                     | Min width of avatar wrapper and image        |
 | minWidth         | String \| Number | 265                         |                                     | Min height of avatar wrapper and image       |
 | color            | String           | "grey"                        |                                     | Color in avatar wrapper if no image is given |
@@ -225,7 +225,7 @@ export default {
 ##### Events
 | Name    | Payload                |
 |---------|------------------------|
-| addFile | {title, type, imageSrc}|
+| addFile | {id, src, file}|
 
 ### Helpers
 #### Common file types

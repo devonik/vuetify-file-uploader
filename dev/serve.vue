@@ -57,6 +57,15 @@
                 </v-col>
               </v-row>
             </v-card-text>
+            <v-card-actions>
+              <v-btn color="primary" @click="setMockData"
+                >Set mockup data</v-btn
+              >
+              <v-spacer></v-spacer>
+              <v-btn color="primary" @click="resetMockData"
+                >Reset mockup data</v-btn
+              >
+            </v-card-actions>
           </v-card>
           <v-expansion-panels
             v-if="settings.layout === layouts.CARD"
@@ -86,11 +95,6 @@
                     >
                     </v-switch>
                   </v-col>
-                  <v-col
-                    ><v-btn color="primary" @click="setDummyFile"
-                      >Set dummy file</v-btn
-                    ></v-col
-                  >
                 </v-row>
               </v-expansion-panel-content>
             </v-expansion-panel>
@@ -138,11 +142,6 @@
                       label="Show placeholder card"
                       hide-details
                     ></v-switch>
-                  </v-col>
-                  <v-col>
-                    <v-btn color="primary" @click="setDummyFiles"
-                      >Set dummy files</v-btn
-                    >
                   </v-col>
                 </v-row>
               </v-expansion-panel-content>
@@ -206,11 +205,6 @@
                     >
                     </v-text-field>
                   </v-col>
-                  <v-col>
-                    <v-btn color="primary" @click="setDummyAvatar"
-                      >Set dummy avatar</v-btn
-                    >
-                  </v-col>
                 </v-row>
               </v-expansion-panel-content>
             </v-expansion-panel>
@@ -224,6 +218,7 @@
 <script>
 import FileUploader from "@/lib-components/FileUploader";
 import utils from "@/utils";
+import clonedeep from "lodash.clonedeep";
 function defaultSettings() {
   return {
     layout: "card",
@@ -285,49 +280,61 @@ export default {
     },
   },
   methods: {
-    setDummyFile() {
-      this.settings.file = {
-        title: "Best airlines",
-        type: "dummy",
-        imageSrc: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
-      };
+    resetMockData() {
+      this.settings.file = defaultSettings().file;
+      this.settings.files.splice(0);
     },
-    setDummyFiles() {
-      this.settings.files = [
+    setMockData() {
+      switch (this.settings.layout) {
+        case this.layouts.CARD:
+          this.setMockFile();
+          break;
+        case this.layouts.CARD_LIST:
+          this.setMockFiles();
+          break;
+        case this.layouts.AVATAR:
+          this.setMockAvatar();
+          break;
+      }
+    },
+    setMockFile() {
+      this.settings.file = clonedeep({
+        title: "Best airlines",
+        type: "image/",
+        src: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
+      });
+    },
+    setMockFiles() {
+      [
         {
           title: "Pre-fab homes",
-          type: "dummy",
-          imageSrc: "https://cdn.vuetifyjs.com/images/cards/house.jpg",
+          type: "image/",
+          src: "https://cdn.vuetifyjs.com/images/cards/house.jpg",
         },
         {
           title: "Favorite road trips",
-          type: "dummy",
-          imageSrc: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
-        },
-        {
-          title: "Best airlines",
-          type: "dummy",
-          imageSrc: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
+          type: "image/",
+          src: "https://cdn.vuetifyjs.com/images/cards/road.jpg",
         },
         {
           id: 1,
           title: "Remote Picture with ID",
-          type: "dummy",
-          imageSrc: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
+          type: "image/",
+          src: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
         },
         {
           id: 2,
           title: "Remote Picture with ID",
-          type: "dummy",
-          imageSrc: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
+          type: "image/",
+          src: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
         },
-      ];
+      ].forEach((item) => this.settings.files.push(item));
     },
-    setDummyAvatar() {
+    setMockAvatar() {
       this.settings.file = {
         title: "devnik",
         type: "dummy",
-        imageSrc: "https://avatars.githubusercontent.com/u/16446467?s=400&v=4",
+        src: "https://avatars.githubusercontent.com/u/16446467?s=400&v=4",
       };
     },
   },

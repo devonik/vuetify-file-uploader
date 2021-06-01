@@ -1,6 +1,6 @@
 {
   "name": "vuetify-file-uploader",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "author": "devnik <developer@niklas-grieger.dev> (https://niklas-grieger.dev)",
   "license": "MIT",
   "description": "",
@@ -20,7 +20,9 @@
     "dist/*",
     "src/**/*.vue"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "lodash.clonedeep": "^4.5.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",

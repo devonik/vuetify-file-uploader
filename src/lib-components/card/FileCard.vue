@@ -2,7 +2,7 @@
   <v-card>
     <v-img
       v-if="internalFile"
-      :src="internalFile.imageSrc"
+      :src="internalFile.src"
       :lazy-src="
         internalFile.imageLazySrc
           ? internalFile.imageLazySrc
@@ -18,15 +18,12 @@
         <v-card-title>No preview available</v-card-title>
       </template>
       <slot name="title">
-        <v-card-title
-          class="white--text"
-          v-text="internalFile.title"
-        ></v-card-title>
+        <v-card-title class="white--text" v-text="fileName"></v-card-title>
       </slot>
       <slot name="subtitle">
         <v-card-subtitle
           class="white--text"
-          v-text="internalFile.type"
+          v-text="fileType"
         ></v-card-subtitle>
       </slot>
     </v-img>
@@ -43,6 +40,7 @@
 
 <script>
 import FileCardPlaceholder from "@/lib-components/card/FileCardPlaceholder";
+import clonedeep from "lodash.clonedeep";
 export default {
   name: "FileCard",
   components: { FileCardPlaceholder },
@@ -68,6 +66,14 @@ export default {
       default: false,
     },
   },
+  computed: {
+    fileName() {
+      return this.internalFile.title || this.internalFile.file.name;
+    },
+    fileType() {
+      return this.internalFile.type || this.internalFile.file.type;
+    },
+  },
   data() {
     return {
       defaultImageLazySrc: "https://picsum.photos/id/11/10/6",
@@ -76,20 +82,20 @@ export default {
   },
   watch: {
     file(oldVal, newVal) {
-      if (oldVal !== newVal) this.internalFile = Object.assign(this.file);
+      if (oldVal !== newVal) this.internalFile = clonedeep(newVal);
     },
   },
   mounted() {
-    if (this.file) this.internalFile = Object.assign(this.file);
+    if (this.file) this.internalFile = clonedeep(this.file);
   },
   methods: {
-    addFile({ title, type, imageSrc }) {
+    addFile({ id, src, file }) {
       this.internalFile = {
-        title,
-        type,
-        imageSrc,
+        id,
+        src,
+        file,
       };
-      this.$emit("addFile", { title, type, imageSrc });
+      this.$emit("addFile", { id, src, file });
     },
   },
 };

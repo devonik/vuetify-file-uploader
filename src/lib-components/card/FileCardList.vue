@@ -2,12 +2,8 @@
   <div class="file-uploader-card-list">
     <template v-if="listLayout === listLayouts.GRID">
       <v-row>
-        <v-col
-          v-for="file in files"
-          :key="file.id ? file.id : file.title"
-          cols="12"
-          :sm="gridCols"
-        >
+        <v-col v-for="(file, i) in files" :key="i" cols="12" :sm="gridCols">
+          i: {{ i }}
           <FileCard :file="file" :contain="contain" :image-height="imageHeight">
             <template v-for="(index, name) in $slots" v-slot:[name]>
               <slot :name="name" />
@@ -30,6 +26,7 @@
 import utils from "@/utils";
 import FileCardPlaceholder from "@/lib-components/card/FileCardPlaceholder";
 import FileCard from "@/lib-components/card/FileCard";
+
 export default {
   name: "FileCardList",
   components: { FileCard, FileCardPlaceholder },
@@ -86,13 +83,13 @@ export default {
     };
   },
   methods: {
-    addFile({ title, type, imageSrc }) {
+    addFile({ id, src, file }) {
       this.internalFiles.push({
-        title,
-        type,
-        imageSrc,
+        id,
+        src,
+        file,
       });
-      this.$emit("addFile", { title, type, imageSrc });
+      this.$emit("addFile", { id, src, file });
     },
   },
 };
