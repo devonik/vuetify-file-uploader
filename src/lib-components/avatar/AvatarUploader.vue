@@ -31,7 +31,6 @@
 
 <script>
 import DragDropArea from "@/lib-components/DragDropArea";
-import clonedeep from "lodash.clonedeep";
 export default {
   name: "AvatarUploader",
   components: { DragDropArea },
@@ -77,12 +76,12 @@ export default {
     };
   },
   watch: {
-    file(oldVal, newVal) {
-      if (oldVal !== newVal) this.internalFile = clonedeep(this.file);
+    file(newVal, oldVal) {
+      if (newVal !== oldVal) this.internalFile = newVal;
     },
   },
   mounted() {
-    if (this.file) this.internalFile = clonedeep(this.file);
+    if (this.file) this.internalFile = Object.assign(this.file);
   },
   computed: {
     isImgReady() {

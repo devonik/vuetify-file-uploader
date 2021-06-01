@@ -218,7 +218,6 @@
 <script>
 import FileUploader from "@/lib-components/FileUploader";
 import utils from "@/utils";
-import clonedeep from "lodash.clonedeep";
 function defaultSettings() {
   return {
     layout: "card",
@@ -298,11 +297,14 @@ export default {
       }
     },
     setMockFile() {
-      this.settings.file = clonedeep({
-        title: "Best airlines",
-        type: "image/",
-        src: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
-      });
+      this.settings.file = Object.assign(
+        {},
+        {
+          title: "Best airlines",
+          type: "image/",
+          src: "https://cdn.vuetifyjs.com/images/cards/plane.jpg",
+        }
+      );
     },
     setMockFiles() {
       [

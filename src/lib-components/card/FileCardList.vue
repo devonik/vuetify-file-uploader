@@ -3,7 +3,6 @@
     <template v-if="listLayout === listLayouts.GRID">
       <v-row>
         <v-col v-for="(file, i) in files" :key="i" cols="12" :sm="gridCols">
-          i: {{ i }}
           <FileCard :file="file" :contain="contain" :image-height="imageHeight">
             <template v-for="(index, name) in $slots" v-slot:[name]>
               <slot :name="name" />
@@ -70,8 +69,8 @@ export default {
     },
   },
   watch: {
-    internalFiles(oldVal, newVal) {
-      if (oldVal !== newVal) this.internalFiles = Object.assign(this.files);
+    internalFiles(newVal, oldVal) {
+      if (newVal !== oldVal) this.internalFiles = newVal;
     },
   },
   mounted() {

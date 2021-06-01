@@ -9,6 +9,7 @@ import replace from "@rollup/plugin-replace";
 import babel from "@rollup/plugin-babel";
 import { terser } from "rollup-plugin-terser";
 import minimist from "minimist";
+import analyze from "rollup-plugin-analyzer";
 
 //https://www.npmjs.com/package/rollup-plugin-vuetify
 import vuetify from "rollup-plugin-vuetify";
@@ -115,6 +116,7 @@ if (!argv.format || argv.format === "es") {
         ],
       }),
       vuetify(),
+      analyze(),
     ],
   };
   buildFormats.push(esConfig);

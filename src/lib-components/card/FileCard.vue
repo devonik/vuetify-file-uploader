@@ -40,7 +40,6 @@
 
 <script>
 import FileCardPlaceholder from "@/lib-components/card/FileCardPlaceholder";
-import clonedeep from "lodash.clonedeep";
 export default {
   name: "FileCard",
   components: { FileCardPlaceholder },
@@ -81,12 +80,12 @@ export default {
     };
   },
   watch: {
-    file(oldVal, newVal) {
-      if (oldVal !== newVal) this.internalFile = clonedeep(newVal);
+    file(newVal, oldVal) {
+      if (newVal !== oldVal) this.internalFile = newVal;
     },
   },
   mounted() {
-    if (this.file) this.internalFile = clonedeep(this.file);
+    if (this.file) this.internalFile = Object.assign(this.file);
   },
   methods: {
     addFile({ id, src, file }) {
